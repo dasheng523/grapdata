@@ -1,5 +1,7 @@
 (ns grapproject.core
+  (:require [clojure.core.async :as async :refer [<! >! <!! >!!  go-loop close! alts! timeout chan alt! go]])
   (:gen-class))
+
 
 (defn -main
   "I don't do a whole lot ... yet."
@@ -7,11 +9,10 @@
   (println "Hello, World!"))
 
 
-(defn fac-cps [n k]
-  (letfn [(cont [v] (k (* v n)))]
-    (if (zero? n)
-      (k 1)
-      (recur (dec n) cont))))
+(def ss (chan))
 
-(defn fac [n]
-  (fac-cps n identity))
+(defn addchan []
+  (go (>! ss "test")))
+
+(defn consumechan []
+  (go (spit  "test.log" (<! ss))))
