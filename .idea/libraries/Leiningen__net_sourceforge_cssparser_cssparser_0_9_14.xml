@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: net.sourceforge.cssparser/cssparser:0.9.14">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
