@@ -1,4 +1,4 @@
-# grapproject
+# grapdata
 
 FIXME: description
 
@@ -10,7 +10,7 @@ Download from http://example.com/FIXME.
 
 FIXME: explanation
 
-    $ java -jar grapproject-0.1.0-standalone.jar [args]
+    $ java -jar grapdata-0.1.0-standalone.jar [args]
 
 ## Options
 
