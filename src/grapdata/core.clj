@@ -11,13 +11,17 @@
 ;TODO 以后再用一个像样的LOG吧
 ;TODO 失败后需要能够恢复环境，要是发生了跳转，那就麻烦了（可以查看trace-redirects就好了）。
 ;TODO 在处理html的时候，也需要知道格式对不对，那种格式不对的地址和内容也是需要保持的。
+;TODO 好像需要封装一个协议才能玩得起。
 
-(def error-log (common/write-file "error.log"))
+(defprotocol grap-protocol
+  (start [grap])
+  (restart [grap])
+  (stop [grap]))
 
-;TODO 这个数字需要配置形式拿出来
-
+(deftype GrapConfig [channel task-id])
 
 (defn graper-generator [fn-fetch-url fn-next-link-from fn-handle-html]
+  ;TODO 这个数字需要配置形式拿出来
   (let [need-to-fetch (async/chan (async/buffer 1000))
         add-url-to-chan (fn [url] (async/go (async/>! need-to-fetch url)))]
     (fn [start-url]
@@ -36,7 +40,7 @@
 
 
 
-
+(def error-log (common/write-file "error.log"))
 (defn get-url-by-clojure [url]
   (let [resp (client/get url)]
     (if (= (:status resp) 200)
@@ -77,8 +81,6 @@
 
 (defn handle-domain [domain]
   (println "save domain"))
-
-
 
 
 
