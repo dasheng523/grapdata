@@ -17,6 +17,7 @@
                  [com.ashafa/clutch "0.4.0"]
                  [clj-webdriver "0.7.1"]
                  [enlive "1.1.6"]
+                 [com.novemberain/monger "3.0.0-rc2"]
                  [org.seleniumhq.selenium/selenium-java "2.45.0"]]
   :main ^:skip-aot grapdata.core
   :target-path "target/%s"
