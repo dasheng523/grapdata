@@ -2,7 +2,8 @@
   (:require [clojure.core.async :as async]
             [clj-http.client :as client]
             [net.cgrand.enlive-html :as enlive]
-            [grapdata.common :as common])
+            [grapdata.common :as common]
+            [grapdata.mongodetail :as mongo])
   (:gen-class)
   (:import (java.io StringReader)))
 ;[clojure.core.async :as async :refer [<! >! <!! >!! buffer  go-loop close! alts! timeout chan alt! go]]
@@ -34,7 +35,8 @@
                 (add-url-to-chan link))
               (fn-handle-html htmlcontent url))
             (catch Exception e
-              ;TODO 要处理这里的异常
+
+              (mongo/insert-invail-url task-id url)
               )))
         (recur)))))
 

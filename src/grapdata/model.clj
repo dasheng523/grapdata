@@ -1,7 +1,6 @@
 (ns grapdata.model
   (:use [korma.db]
-        [korma.core])
-  (:import (java.util Date)))
+        [korma.core]))
 
 (defdb bigdata-db (postgres {:db "bidata"
                              :user "postgres"
