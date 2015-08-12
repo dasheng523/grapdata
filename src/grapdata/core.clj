@@ -1,10 +1,8 @@
 (ns grapdata.core
-  (:require [clojure.core.async :as async]
-            [clj-http.client :as client]
-            [net.cgrand.enlive-html :as enlive]
-            [grapdata.common :as common])
-  (:gen-class)
-  (:import (java.io StringReader)))
+  (:require [clojure.core.async :as async :only [<! >!]]
+            [grapdata.common :as common]
+            [grapdata.grapimpl :as impl])
+  (:gen-class))
 ;[clojure.core.async :as async :refer [<! >! <!! >!! buffer  go-loop close! alts! timeout chan alt! go]]
 
 ;TODO 解决log4j的警告
@@ -36,57 +34,13 @@
               (fn-handle-error url))))
         (recur)))))
 
-
+(defn graper (graper-generator
+               impl/fetch-url
+               impl/parse-link
+               (impl/handle-html-generator "523")
+               (impl/handle-error-generator "523")))
 
 (def error-log (common/write-file "error.log"))
-(defn get-url-by-clojure [url]
-  (let [resp (client/get url)]
-    (if (= (:status resp) 200)
-      resp
-      (do
-        (error-log (str "\n error in this url:" url "\n"
-                        (pr-str resp)))
-        nil))))
-
-(defn post-url-by-clojure [url form-data]
-  (let [resp (client/post url {:form-params form-data})]
-    (if (= (:status resp) 200)
-      resp
-      (do
-        (error-log (str "\n error in this url:" url "\n"
-                        (pr-str resp)))
-        nil))))
-
-
-;解析html内容
-(defn parse-link [html]
-  (->
-    html
-    :body
-    (StringReader.)
-    enlive/html-resource
-    (enlive/select [:dt.pro_list_pic :> :a])
-    ((fn [link-node] (map #(str "http://www.15fen.com/" (-> % :attrs :href)) link-node)))))
-
-(defn handle-html [html _]
-  (->
-    html
-    :body
-    (StringReader.)
-    enlive/html-resource
-    (enlive/select [:head :title])
-    println))
-
-(defn handle-domain [domain]
-  (println "save domain"))
-
-
-
-(def grapfn (graper-generator get-url-by-clojure parse-link handle-html))
-
-(defn testtest []
-  (grapfn "http://www.15fen.com/category.php?id=1"))
-
 
 
 (defn -main
@@ -94,10 +48,3 @@
   [& args]
   (println "Hello, World!"))
 
-
-
-#_(defn tttt []
-  (def test-chan (async/chan))
-  (async/go (async/>! test-chan 1))
-  (def datas [1 2 3 4])
-  (async/go (map #(async/>! test-chan %) datas)))

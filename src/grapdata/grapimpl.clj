@@ -1,7 +1,8 @@
 (ns grapdata.grapimpl
   (:require [clojure.core.async :as async :only [<! timeout]]
             [clj-http.client :as http :only [get]]
-            [net.cgrand.enlive-html :as enlive :only [select]])
+            [net.cgrand.enlive-html :as enlive :only [select]]
+            [grapdata.mongodetail :as mongo])
   (:import (java.io StringReader)))
 
 ;速度
@@ -39,14 +40,13 @@
         ((fn [info] (println info) info))
         ((fn [linknodes] (reduce #(conj %1 (str "http://www.15fen.com/" (-> %2 :attrs :href))) #{} linknodes)))))))
 
-(defn handle-html [html]
-  (when (= "detail" (page-type html))
-    (let [htmlnodes (change-nodes html)]
-      )))
+(defn handle-html-generator [task-id]
+  (fn handle-html [html]
+    (when (= "detail" (page-type html))
+      (mongo/insert-htmlcontent (assoc html :task_id task-id)))))
 
-(defn- full-task []
-  )
-
+(defn handle-error-generator [task-id]
+  #(mongo/insert-invail-url task-id %))
 
 (defrecord GrapTask [task-id start-url])
 
@@ -59,7 +59,3 @@
   (end-grap [grap-task])
   ;重新开始抓取任务
   (restart-grap [grap-task]))
-
-(extend GrapTask
-  Grapable
-  )

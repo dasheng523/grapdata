@@ -8,3 +8,5 @@
 (defn fac [n]
   (fac-cps n identity))
 
+(defn dddd [coll n]
+  (get (group-by identity coll) n))
