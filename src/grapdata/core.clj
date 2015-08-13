@@ -1,7 +1,5 @@
 (ns grapdata.core
-  (:require [clojure.core.async :as async :only [<! >!]]
-            [grapdata.common :as common]
-            [grapdata.grapimpl :as impl])
+  (:require [clojure.core.async :as async :only [<! >!]])
   (:gen-class))
 ;[clojure.core.async :as async :refer [<! >! <!! >!! buffer  go-loop close! alts! timeout chan alt! go]]
 
@@ -34,13 +32,32 @@
               (fn-handle-error url))))
         (recur)))))
 
-(defn graper (graper-generator
-               impl/fetch-url
-               impl/parse-link
-               (impl/handle-html-generator "523")
-               (impl/handle-error-generator "523")))
 
-(def error-log (common/write-file "error.log"))
+(defrecord GrapEngine [url-visitor next-link-extractor html-handler error-handler])
+(defprotocol Graper
+  (task-execution [grap-engine]))
+
+(extend-protocol Graper
+  GrapEngine
+  (task-execution [grap-engine]
+    ;TODO 这个数字需要配置形式拿出来
+    (let [need-to-fetch (async/chan (async/buffer buffer-len))
+          add-url-to-chan (fn [url] (async/go (async/>! need-to-fetch url)))]
+      (fn [start-url]
+        (add-url-to-chan start-url)
+        (async/go-loop []
+          (let [url (async/<! need-to-fetch)]
+            (try
+              (when-let [htmlcontent ((:url-fetcher grap-engine) url)]
+                (doseq [link ((:next-link-extractor grap-engine) htmlcontent)]
+                  (add-url-to-chan link))
+                ((:html-handler grap-engine) htmlcontent))
+              (catch Exception e
+                (.printStackTrace e)
+                ((:error-handler grap-engine) url))))
+          (recur))))))
+
+
 
 
 (defn -main
