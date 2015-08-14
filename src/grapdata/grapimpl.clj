@@ -86,13 +86,7 @@
     (taskruner "http://www.15fen.com/category.php?id=1")))
 
 
-(defrecord GrapTask [task-id start-url])
-(defprotocol Grapable
-  ;开始抓取任务
-  (start-grap [grap-task])
-  ;暂停抓取任务
-  (stop-grap [grap-task])
-  ;结束抓取任务
-  (end-grap [grap-task])
-  ;重新开始抓取任务
-  (restart-grap [grap-task]))
+(def engine (engine-generator {:task-id "789"}))
+(def task-server (grapdata.sikedaodi/create-task-actuator engine))
+(def addtask (grapdata.sikedaodi/send-task task-server {:start-link "http://www.15fen.com/category.php?id=1"}))
+(grapdata.sikedaodi/start-task-actuator addtask)

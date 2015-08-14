@@ -27,6 +27,9 @@
 (defn insert-invail-url [task-id url]
   (insert-data "invail_urls" {:task_id task-id :url url}))
 
+(defn insert-needto-url [task-id url]
+  (insert-data "needto_urls" {:task_id task-id :url url}))
+
 (defn delete-invail-url [task-id]
   (mc/remove db "invail_urls" {:task_id task-id}))
 
@@ -36,4 +39,12 @@
 (defn insert-task [task]
   (insert-data "task" task))
 
+(defn find-and-remove-needto-urls [task-id]
+ (let [urls (mc/find-maps db "needto_urls" {:task_id task-id})]
+   (mc/remove db "neeto_urls" {:task_id task-id})
+   urls))
 
+(defn find-and-remove-invail-urls [task-id]
+  (let [urls (mc/find-maps db "invail_urls" {:task_id task-id})]
+    (mc/remove db "invail_urls" {:task_id task-id})
+    urls))
