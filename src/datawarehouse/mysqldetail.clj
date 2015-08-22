@@ -1,4 +1,4 @@
-(ns grapdata.model
+(ns datawarehouse.mysqldetail
   (:use [korma.db]
         [korma.core]))
 

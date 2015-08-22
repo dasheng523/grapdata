@@ -1,4 +1,4 @@
-(ns grapdata.mongodetail
+(ns datawarehouse.mongodetail
   (:require [monger.core :as mg]
             [monger.collection :as mc]
             [monger.query :as mq]

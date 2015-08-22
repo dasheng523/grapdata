@@ -1,4 +1,4 @@
-(ns grapdata.coutchdetail
+(ns datawarehouse.coutchdetail
   (:require [com.ashafa.clutch :as clutch]))
 
 (def html-db (clutch/get-database "html-db"))

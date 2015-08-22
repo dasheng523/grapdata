@@ -2,7 +2,6 @@
   (:require [clojure.core.async :as async]
             [clj-http.client :as http :only [get]]
             [net.cgrand.enlive-html :as enlive :only [select]]
-            [grapdata.mongodetail :as mongo]
             [taoensso.timbre :as timbre])
   (:import (java.io StringReader)))
 
@@ -31,12 +30,12 @@
   (let [task-id (:task-id task-intro)]
     {:error-handler                                         ;错误处理器
      (fn [url]
-       (mongo/insert-invail-url task-id url)
+       (datawarehouse.mongodetail/insert-invail-url task-id url)
        (timbre/error "error in url:" url))
      :html-handler                                          ;页面处理器
      (fn [html]
        (when (= "detail" (page-type html))
-         (mongo/insert-htmlcontent (assoc html :task_id task-id))))
+         (datawarehouse.mongodetail/insert-htmlcontent (assoc html :task_id task-id))))
      :next-link-extractor                                   ;下一页解析器
      (fn [html]
        (when (= "list" (page-type html))
@@ -54,48 +53,6 @@
        (async/go (async/<! (async/timeout @slepp-time)))
        (timbre/info "visiting url:" url)
        (http/get url))}))
-
-
-(def iscontinue (atom 1))
-
-(defn graper-generator [{:keys [url-visitor next-link-extractor html-handler error-handler]}]
-  ;TODO 这个数字需要配置形式拿出来
-  (let [need-to-fetch (async/chan (async/buffer 1000))
-        add-url-to-chan (fn [url] (async/go (async/>! need-to-fetch url)))]
-    (fn [start-url]
-      (add-url-to-chan start-url)
-      (async/go-loop []
-        (let [url (async/<! need-to-fetch)]
-          (try
-            (when-let [htmlcontent (url-visitor url)]
-              (doseq [link (next-link-extractor htmlcontent)]
-                (add-url-to-chan link))
-              (html-handler htmlcontent))
-            (catch Exception e
-              (.printStackTrace e)
-              (error-handler url))))
-        (when @iscontinue
-          (recur))))))
-
-(defn stop-task []
-  (reset! iscontinue nil))
-
-(defn start-task []
-  (let [task {:task-id "4433" :taskname "7776644"}
-        taskruner (graper-generator (engine-generator task))]
-    (taskruner "http://www.15fen.com/category.php?id=1")))
-
-
-(defrecord GrapTask [task-id start-url])
-(defprotocol Grapable
-  ;开始抓取任务
-  (start-grap [grap-task])
-  ;暂停抓取任务
-  (stop-grap [grap-task])
-  ;结束抓取任务
-  (end-grap [grap-task])
-  ;重新开始抓取任务
-  (restart-grap [grap-task]))
 
 
 

@@ -44,18 +44,18 @@
 (defn save-task-actuator [{:keys [need-fetch-urls fail-fetch-urls]} task-info]
   (async/go-loop []
     (when-let [link (async/<! need-fetch-urls)]
-      (grapdata.mongodetail/insert-needto-url (:task-id task-info) link)
+      (datawarehouse.mongodetail/insert-needto-url (:task-id task-info) link)
       (recur)))
   (doseq [link @fail-fetch-urls]
-    ((grapdata.mongodetail/insert-invail-url (:task-id task-info) link))))
+    ((datawarehouse.mongodetail/insert-invail-url (:task-id task-info) link))))
 
 ;恢复任务执行器状态
 (defn recover-task-actuator [actuator task-info]
   (let [need-fetch-urls
         (async/to-chan
-          (grapdata.mongodetail/find-and-remove-needto-urls (:task-id task-info)))
+          (datawarehouse.mongodetail/find-and-remove-needto-urls (:task-id task-info)))
         fail-fetch-urls
-        (grapdata.mongodetail/find-and-remove-invail-urls (:task-id task-info))]
+        (datawarehouse.mongodetail/find-and-remove-invail-urls (:task-id task-info))]
     (assoc actuator :need-fetch-urls need-fetch-urls :fail-fetch-urls (atom fail-fetch-urls))))
 
 ;发送任务
