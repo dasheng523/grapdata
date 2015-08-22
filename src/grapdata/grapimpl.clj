@@ -98,3 +98,8 @@
   (restart-grap [grap-task]))
 
 
+
+(def engine (engine-generator {:task-id "789"}))
+(def task-server (grapdata.sikedaodi/create-task-actuator engine))
+(def addtask (grapdata.sikedaodi/send-task task-server {:start-link "http://www.15fen.com/category.php?id=1"}))
+(grapdata.sikedaodi/start-task-actuator addtask)

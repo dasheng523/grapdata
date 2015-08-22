@@ -1,7 +1,6 @@
 (ns grapdata.core
   (:require [clojure.core.async :as async :only [<! >!]])
   (:gen-class))
-;[clojure.core.async :as async :refer [<! >! <!! >!! buffer  go-loop close! alts! timeout chan alt! go]]
 
 ;TODO 解决log4j的警告
 ;TODO 以后再用一个像样的LOG吧
