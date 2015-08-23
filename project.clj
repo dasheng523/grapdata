@@ -13,10 +13,14 @@
                  [clj-http "2.0.0"]
                  [com.ashafa/clutch "0.4.0"]
                  [clj-webdriver "0.7.1"]
+                 [com.github.detro.phantomjsdriver "1.2.0"]
                  [enlive "1.1.6"]
                  [com.novemberain/monger "3.0.0-rc2"]
                  [org.seleniumhq.selenium/selenium-java "2.45.0"]
-                 [com.taoensso/timbre "4.1.0"]]
+                 [com.taoensso/timbre "4.1.0"]
+                 [korma "0.4.2"]
+                 [org.clojure/java.jdbc "0.3.7"]
+                 [org.postgresql/postgresql "9.2-1002-jdbc4"]]
   :main ^:skip-aot grapdata.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
