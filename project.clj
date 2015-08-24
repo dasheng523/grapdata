@@ -13,7 +13,10 @@
                  [clj-http "2.0.0"]
                  [com.ashafa/clutch "0.4.0"]
                  [clj-webdriver "0.7.1"]
-                 [com.github.detro.phantomjsdriver "1.2.0"]
+                 [com.codeborne/phantomjsdriver "1.2.1"
+                  :exclusion [org.seleniumhq.selenium/selenium-java
+                              org.seleniumhq.selenium/selenium-server
+                              org.seleniumhq.selenium/selenium-remote-driver]]
                  [enlive "1.1.6"]
                  [com.novemberain/monger "3.0.0-rc2"]
                  [org.seleniumhq.selenium/selenium-java "2.45.0"]
@@ -30,3 +33,4 @@
 ;[korma "0.4.2"]
 ;[org.clojure/java.jdbc "0.3.7"]
 ;[org.postgresql/postgresql "9.2-1002-jdbc4"]
+;[com.github.detro.phantomjsdriver "1.2.0"]
