@@ -21,7 +21,7 @@
 
 
 (defn- init-driver-list [n]
-  (System/setProperty "phantomjs.binary.path" "G:/dev_kit/phantomjs-1.9.8-windows/phantomjs.exe")
+  (System/setProperty "phantomjs.binary.path" "e:/devkit/phantomjs-1.9.8-windows/phantomjs.exe")
   (for [_ (range n)]
     (go (>! driver-list (init-single-driver)))))
 

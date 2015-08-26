@@ -1,6 +1,7 @@
 (ns grapdata.grap-executor
   (:require [clojure.core.async :as async]
-            [taoensso.timbre :as timbre]))
+            [taoensso.timbre :as timbre]
+            [datawarehouse.mongodetail]))
 
 
 ;创建任务执行器
