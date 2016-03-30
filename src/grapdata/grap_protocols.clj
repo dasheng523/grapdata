@@ -2,7 +2,7 @@
 
 
 
-;抓取最外层接口
+;鎶撳彇鏈�澶栧眰鎺ュ彛
 (defprotocol GrapInterface
   (start [])
   (stop [])

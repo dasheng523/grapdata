@@ -4,19 +4,19 @@
             [datawarehouse.mongodetail]))
 
 
-;´´½¨ÈÎÎñÖ´ĞĞÆ÷
+;åˆ›å»ºä»»åŠ¡æ‰§è¡Œå™¨
 (defn create-task-actuator [task-engine]
   {:need-fetch-urls (async/chan)
    :fail-fetch-urls (atom [])
    :is-continue (atom true)
    :task-engine task-engine})
 
-;Æô¶¯ÈÎÎñÖ´ĞĞÆ÷
+;å¯åŠ¨ä»»åŠ¡æ‰§è¡Œå™¨
 (defn start-task-actuator [{:keys [need-fetch-urls fail-fetch-urls is-continue task-engine] :as actuator}]
   (let [add-url-to-chan (fn [url] (async/go (async/>! need-fetch-urls url)))]
     (when-not @is-continue
       (reset! is-continue true))
-    (timbre/info "ÈÎÎñÖ´ĞĞÆ÷£¬Æô¶¯")
+    (timbre/info "ä»»åŠ¡æ‰§è¡Œå™¨ï¼Œå¯åŠ¨")
     (async/go-loop []
       (let [url (async/<! need-fetch-urls)]
         (try
@@ -30,20 +30,20 @@
             ((:error-handler task-engine) e))))
       (if @is-continue
         (recur)
-        (timbre/info "ÈÎÎñÖ´ĞĞÆ÷£¬¹Ø±Õ")))
+        (timbre/info "ä»»åŠ¡æ‰§è¡Œå™¨ï¼Œå…³é—­")))
     actuator))
 
-;Í£Ö¹ÈÎÎñÖ´ĞĞÆ÷
+;åœæ­¢ä»»åŠ¡æ‰§è¡Œå™¨
 (defn stop-task-actuator [{:keys [need-fetch-urls is-continue] :as actuator}]
   (if @is-continue
     (do
       (reset! is-continue false)
       (async/close! need-fetch-urls)
-      (timbre/info "²Ù×÷³É¹¦"))
-    (timbre/error "²Ù×÷Ê§°Ü£¬ÈÎÎñÔç¾ÍÍ£Ö¹ÁË£¡"))
+      (timbre/info "æ“ä½œæˆåŠŸ"))
+    (timbre/error "æ“ä½œå¤±è´¥ï¼Œä»»åŠ¡æ—©å°±åœæ­¢äº†ï¼"))
   actuator)
 
-;ÈÎÎñÖ´ĞĞÆ÷×´Ì¬³Ö¾Ã»¯
+;ä»»åŠ¡æ‰§è¡Œå™¨çŠ¶æ€æŒä¹…åŒ–
 (defn save-task-actuator [{:keys [need-fetch-urls fail-fetch-urls]} task-id]
   (async/go-loop []
     (when-let [link (async/<! need-fetch-urls)]
@@ -52,7 +52,7 @@
   (doseq [link @fail-fetch-urls]
     ((datawarehouse.mongodetail/insert-invail-url task-id link))))
 
-;»Ö¸´ÈÎÎñÖ´ĞĞÆ÷×´Ì¬
+;æ¢å¤ä»»åŠ¡æ‰§è¡Œå™¨çŠ¶æ€
 (defn recover-task-actuator [actuator task-id]
   (let [need-fetch-urls
         (async/to-chan
@@ -61,7 +61,7 @@
         (datawarehouse.mongodetail/find-and-remove-invail-urls task-id)]
     (assoc actuator :need-fetch-urls need-fetch-urls :fail-fetch-urls (atom fail-fetch-urls))))
 
-;·¢ËÍÈÎÎñ
+;å‘é€ä»»åŠ¡
 (defn send-task [{:keys [need-fetch-urls] :as actuator} start-link]
   (async/go
     (async/>! need-fetch-urls start-link))

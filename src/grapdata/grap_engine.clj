@@ -6,10 +6,10 @@
             [datawarehouse.mongodetail :as mongodetail])
   (:import (java.io StringReader)))
 
-;ËÙ¶È
+;é€Ÿåº¦
 (def slepp-time (atom 1000))
 
-;×ª»¯nodes
+;è½¬åŒ–nodes
 (defn- change-nodes [html]
   (->
     html
@@ -17,7 +17,7 @@
     (StringReader.)
     (enlive/html-resource)))
 
-;×ª»»URLÕæÊµµØÖ·
+;è½¬æ¢URLçœŸå®žåœ°å€
 (defn change-true-address [url currenturl]
   (cond
     (.startsWith url "/")
@@ -31,18 +31,18 @@
       (str (.substring handurl 0 (.lastIndexOf handurl "/")) "/" url))))
 
 
-;Éú³É¾ßÌåµÄ×¥È¡ÒýÇæ
+;ç”Ÿæˆå…·ä½“çš„æŠ“å–å¼•æ“Ž
 (defn engine-generator [fn-page-type next-nodes task-id detail-handle]
-  {:error-handler                                         ;´íÎó´¦ÀíÆ÷
+  {:error-handler                                         ;é”™è¯¯å¤„ç†å™¨
    (fn [url]
      (mongodetail/insert-invail-url task-id url)
      (timbre/error "error in url:" url))
-   :html-handler                                          ;Ò³Ãæ´¦ÀíÆ÷
+   :html-handler                                          ;é¡µé¢å¤„ç†å™¨
    (fn [html]
      (when (= "detail" (fn-page-type html))
        (mongodetail/insert-htmlcontent (assoc html :task_id task-id))
        (detail-handle (change-nodes html))))
-   :next-link-extractor                                   ;ÏÂÒ»Ò³½âÎöÆ÷
+   :next-link-extractor                                   ;ä¸‹ä¸€é¡µè§£æžå™¨
    (fn [html]
      (when (= "list" (fn-page-type html))
        (let [htmlnodes (change-nodes html)]
@@ -54,7 +54,7 @@
                                (-> %2 :attrs :href)
                                (first (:trace-redirects html))))
                       #{} linknodes)))))))
-   :url-visitor                                           ;url·ÃÎÊÆ÷
+   :url-visitor                                           ;urlè®¿é—®å™¨
    (fn fetch-url [url]
      (async/go (async/<! (async/timeout @slepp-time)))
      (timbre/info "visiting url:" url)
