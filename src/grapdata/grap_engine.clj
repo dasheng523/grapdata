@@ -59,5 +59,3 @@
      (async/go (async/<! (async/timeout @slepp-time)))
      (timbre/info "visiting url:" url)
      (http/get url))})
-
-

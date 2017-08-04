@@ -39,4 +39,3 @@
     (let [page-content (page-source driver)]
       (>!! driver-list driver)
       page-content)))
-
