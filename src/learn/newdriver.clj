@@ -1,6 +1,8 @@
 (ns learn.newdriver
   (:require [clj-webdriver.taxi :refer :all]
-            [clj-webdriver.driver :refer [init-driver]])
+            [clj-webdriver.driver :refer [init-driver]]
+            [clojure.core.async :as async]
+            )
   (:import (org.openqa.selenium.phantomjs PhantomJSDriver)
            (org.openqa.selenium.remote DesiredCapabilities)))
 
@@ -19,37 +21,27 @@
                                 (.setCapability "phantomjs.cli.args" (into-array String ["--ignore-ssl-errors=true"
                                                                                          "--webdriver-loglevel=WARN"]))))})]
     #_(.executePhantomJS (:webdriver driver) (slurp "resources/PhantomJSDriver/withoutcss.js") (into-array []))
+    (window-resize driver {:width 1920 :height 1080})
     driver))
 
 
-(def driver (create-mydriver))
 
-(window-resize driver {:width 1920 :height 1080})
-
-(to driver "https://www.baidu.com")
-
-
-(input-text driver "#kw" "web")
-
-
-(click driver (find-element driver {:css ".s_btn"}))
-
-(map (fn [n] (text n)) (find-elements driver {:css "h3.c-gap-bottom-small a"}))
-
-(execute-script driver "scroll(0, 250);")
-
-
-(take-screenshot driver :file "/home/yesheng/www/1.png")
-
-(close driver)
-
-
-(defn run-driver []
+(defn register []
   (let [driver (create-mydriver)]
-    (to driver "http://www.facebook.com")
-    (quick-fill driver
-                {{:name "email"}, "ming"})
+    (to driver "https://www.facebook.com")
+    (input-text driver "input[name=lastname]" "han")
+    (input-text driver "input[name=firstname]" "xixi")
+    (input-text driver "input[name=reg_email__]" "test@hyesheng.com")
+    (input-text driver "#u_0_a" "testest@hyesheng.com")
+    (input-text driver "input[name=reg_passwd__]" "!3465634rgdG")
+    (select-option driver "#year" {:text "1990"})
+    (select-option driver "#month" {:value "1"})
+    (select-option driver "#day" {:value "1"})
+    (select driver "#u_0_h")
+    (click driver "#u_0_m")
+    (async/<!! (async/timeout 3000))
     (take-screenshot driver :file "/home/yesheng/www/1.png")
-    (close driver)))
+    (close driver)
+    (quit driver)))
 
-
+(register)
