@@ -8,7 +8,6 @@
 
 (def PHANTOM_PATH "/usr/local/phantomjs-2.1.1-linux-x86_64/bin/phantomjs")
 
-
 (defn create-mydriver
   []
   (System/setProperty "phantomjs.binary.path" PHANTOM_PATH)
@@ -25,23 +24,48 @@
     driver))
 
 
-
 (defn register []
   (let [driver (create-mydriver)]
-    (to driver "https://www.facebook.com")
-    (input-text driver "input[name=lastname]" "han")
-    (input-text driver "input[name=firstname]" "xixi")
-    (input-text driver "input[name=reg_email__]" "test@hyesheng.com")
-    (input-text driver "#u_0_a" "testest@hyesheng.com")
-    (input-text driver "input[name=reg_passwd__]" "!3465634rgdG")
-    (select-option driver "#year" {:text "1990"})
-    (select-option driver "#month" {:value "1"})
-    (select-option driver "#day" {:value "1"})
-    (select driver "#u_0_h")
-    (click driver "#u_0_m")
-    (async/<!! (async/timeout 3000))
-    (take-screenshot driver :file "/home/yesheng/www/1.png")
-    (close driver)
-    (quit driver)))
+    (try
+      (to driver "https://www.facebook.com")
+      (input-text driver "input[name=lastname]" "han")
+      (input-text driver "input[name=firstname]" "xixi")
+      (input-text driver "input[name=reg_email__]" "test@hyesheng.com")
+      (input-text driver "#u_0_a" "testest@hyesheng.com")
+      (input-text driver "input[name=reg_passwd__]" "!3465634rgdG")
+      (select-option driver "#year" {:text "1990"})
+      (select-option driver "#month" {:value "1"})
+      (select-option driver "#day" {:value "1"})
+      (select driver "#u_0_1")
+      (click driver "#u_0_m")
+      (async/<!! (async/timeout 3000))
+      (take-screenshot driver :file "/home/yesheng/www/1.png")
+      (finally
+        (println "error")
+        (quit driver)))))
 
 (register)
+
+
+(def mydriver (create-mydriver))
+
+(to mydriver "https://www.facebook.com")
+
+(input-text mydriver "input[name=lastname]" "han")
+(input-text mydriver "input[name=firstname]" "xixi")
+(input-text mydriver "input[name=reg_email__]" "test@hyesheng.com")
+(input-text mydriver "#u_0_a" "testest@hyesheng.com")
+(input-text mydriver "input[name=reg_passwd__]" "!3465634rgdG")
+(select-option mydriver "#year" {:text "1990"})
+(select-option mydriver "#month" {:value "1"})
+(select-option mydriver "#day" {:value "1"})
+(select mydriver "#u_0_1")
+(click mydriver "#u_0_m")
+(take-screenshot mydriver :file "/home/yesheng/www/1.png")
+
+(to mydriver "http://www.google.com")
+
+(to mydriver "https://www.baidu.com")
+
+(close mydriver)
+(quit mydriver)

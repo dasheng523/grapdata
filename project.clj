@@ -32,7 +32,6 @@
   :profiles {:uberjar {:aot :all}})
 
 
-
 ;[korma "0.4.2"]
 ;[org.clojure/java.jdbc "0.3.7"]
 ;[org.postgresql/postgresql "9.2-1002-jdbc4"]
