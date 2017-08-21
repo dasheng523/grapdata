@@ -1,13 +1,44 @@
 (ns learn.email
   (:require [clojure-mail.core :refer :all]
-            [clojure-mail.message :as message]))
+            [clojure-mail.message :as message]
+            [clojure.string :as str]
+            [learn.utils :as utils]))
 
+(def emails (ref {}))
 
-(def wangyi-store (store "imap" "mail.hyesheng.com" "test@hyesheng.com" "a5235013"))
+(defn get-email
+  [address]
+  (let [email (find @emails address)]
+    (if (nil? email)
+      (let [new-email (store "imap" "mail.hyesheng.com" address "a5235013")]
+        (dosync (alter emails assoc address new-email))
+        new-email)
+      email)))
 
+(defn close-all-email
+  []
+  (doseq [[k v] @emails]
+    (dosync (alter emails dissoc emails k))
+    (close-store v)))
 
-(def my-inbox-message (take 5 (all-messages wangyi-store "inbox")))
+(defn get-facebook-email-code
+  [email-store]
+  (let [latest-message (take 5 (all-messages email-store "inbox"))
+        facebook-message (utils/find-first #(str/index-of (message/subject %) "是你的 Facebook 验证码") latest-message)]
+    (-> facebook-message
+        (message/subject)
+        (str/split #" ")
+        (first))))
 
+(defn get-facebook-confirm-email-url
+  [email-store]
+  (-> (first (all-messages email-store "inbox"))
+      (message/message-body)
+      first
+      :body
+      (#(re-find #"(http.*confirmemail.*)\s" %))
+      ((fn [n]
+         (if (> (count n) 1)
+           (last n)
+           nil)))))
 
-(def first-message (first my-inbox-message))
-(message/subject first-message)

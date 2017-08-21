@@ -1,69 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3212c24-f507-43c0-9bc5-f56f3d3fd590" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/main.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/plan.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/think.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/phantomjsdriver.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/PhantomJSDriver/withoutcss.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/datawarehouse/coutchdetail.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/datawarehouse/dbsqldetail.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/datawarehouse/mongodetail.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/grapdata/grap_engine.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/grapdata/grap_executor.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/grapdata/grap_protocols.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/grapdata/grap_records.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/learn/learnmongo.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/learn/learntimbre.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/pingtai/main.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/task/common_task.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/tools/phantom_graper.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/grapdata/actuator_test.clj" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__cglib_cglib_nodep_2_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__clj_webdriver_0_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_code_gson_gson_2_3_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__commons_collections_3_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__enlive_1_1_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__io_netty_netty_3_5_2_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_java_dev_jna_jna_3_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_java_dev_jna_platform_3_4_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_sourceforge_cssparser_cssparser_0_9_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_sourceforge_htmlunit_htmlunit_2_15.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_sourceforge_htmlunit_htmlunit_core_js_2_15.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_sourceforge_nekohtml_nekohtml_1_9_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_commons_commons_exec_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_ccil_cowan_tagsoup_tagsoup_1_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_core_cache_0_6_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_data_priority_map_0_0_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_logging_0_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_eclipse_jetty_jetty_http_8_1_15_v20140411.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_eclipse_jetty_jetty_io_8_1_15_v20140411.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_eclipse_jetty_jetty_util_8_1_15_v20140411.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_eclipse_jetty_jetty_websocket_8_1_15_v20140411.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_jsoup_jsoup_1_7_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_mortbay_jetty_jetty_6_1_25.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_mortbay_jetty_jetty_util_6_1_25.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_mortbay_jetty_servlet_api_2_5_20081211.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_api_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_chrome_driver_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_firefox_driver_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_htmlunit_driver_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_ie_driver_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_java_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_leg_rc_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_remote_driver_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_safari_driver_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_seleniumhq_selenium_selenium_support_2_45_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_w3c_css_sac_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_webbitserver_webbit_0_4_14.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__xalan_serializer_2_7_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__xerces_xercesImpl_2_11_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__xml_apis_1_4_01.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/grapdata.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/grapdata/model.clj" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/grapdata/coutchdetail.clj" afterPath="$PROJECT_DIR$/src/learn/clutch.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/intro.md" afterPath="$PROJECT_DIR$/doc/intro.md" />
+    <list default="true" id="842f1f30-5306-42cb-bbaf-cb86e780eb0d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/name/female-names.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/name/male-names.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/name/names.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/sql/users.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dbconfig.example.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/learn/db.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/learn/facebook.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/learn/name.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/learn/utils.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_guava_guava_18_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_google_guava_guava_18_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_commons_commons_lang3_3_3_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_commons_commons_lang3_3_3_2.xml" />
@@ -71,15 +18,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phantomjsdriver.log" afterPath="$PROJECT_DIR$/phantomjsdriver.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/grapdata/common.clj" afterPath="$PROJECT_DIR$/src/grapdata/common.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/grapdata/core.clj" afterPath="$PROJECT_DIR$/src/grapdata/core.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/learn/cps.clj" afterPath="$PROJECT_DIR$/src/learn/cps.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/learn/learndriverweb.clj" afterPath="$PROJECT_DIR$/src/learn/learndriverweb.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/learn/email.clj" afterPath="$PROJECT_DIR$/src/learn/email.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/learn/newdriver.clj" afterPath="$PROJECT_DIR$/src/learn/newdriver.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.xml" afterPath="$PROJECT_DIR$/src/log4j.xml" />
     </list>
-    <ignored path="grapdata.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,27 +31,92 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="grapdata" />
-  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="users.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/sql/users.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="52" column="2" lean-forward="true" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/learn/db.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="facebook.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/learn/facebook.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbconfig.example.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbconfig.example.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28314605">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="name.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/learn/name.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="732">
+              <caret line="102" column="12" lean-forward="false" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>验证帐户</find>
+      <find>male-name</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,32 +129,33 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/learn/utils.clj" />
+        <option value="$PROJECT_DIR$/src/learn/email.clj" />
+        <option value="$PROJECT_DIR$/phantomjsdriver.log" />
+        <option value="$PROJECT_DIR$/src/learn/newdriver.clj" />
+        <option value="$PROJECT_DIR$/src/log4j.xml" />
+        <option value="$PROJECT_DIR$/src/datawarehouse/dbsqldetail.clj" />
+        <option value="$PROJECT_DIR$/resources/name/female-names.txt" />
+        <option value="$PROJECT_DIR$/resources/name/male-names.txt" />
+        <option value="$PROJECT_DIR$/resources/name/name.txt" />
+        <option value="$PROJECT_DIR$/src/learn/name.clj" />
         <option value="$PROJECT_DIR$/project.clj" />
+        <option value="$PROJECT_DIR$/resources/sql/mail.sql" />
+        <option value="$PROJECT_DIR$/resources/sql/users.sql" />
+        <option value="$PROJECT_DIR$/src/dbconfig.clj" />
+        <option value="$PROJECT_DIR$/src/learn/facebook.clj" />
+        <option value="$PROJECT_DIR$/src/learn/db.clj" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -161,109 +171,78 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grapdata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grapdata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grapdata" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="grapdata" type="58d84e3e:PackageViewProjectNode" />
+              <item name="grapdata" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="grapdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grapdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="grapdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grapdata" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="grapdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grapdata" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="grapdata" type="b2602c69:ProjectViewProjectNode" />
+              <item name="grapdata" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="cursive.last.file.extension.E\:/grapdata/src" value="clj" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
-      <module name="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
-      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
-      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
-      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
-      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
-      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
-      <method />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\grapdata\src" />
+    </key>
+  </component>
+  <component name="ReplState" timestamp="1503311958188">{:repl-history {:ide [], :local [{:command &quot;\n(-&gt; (db-core/select* users)\n    (db-core/as-sql))&quot;, :offset 50, :ns &quot;learn.db&quot;} {:command &quot;(ns learn.db\n  (:require [korma.db :as kdb]\n            [korma.core :as db-core]))\n\n(kdb/defdb db (kdb/mysql\n                {:db    \&quot;grap\&quot;\n                :user     \&quot;root\&quot;\n                :password \&quot;a5235013\&quot;}))\n\n(declare users)\n&quot;, :offset 230, :ns &quot;grapdata.core&quot;} {:command &quot;\n(db-core/defentity\n  users\n  (db-core/pk :id)\n  (db-core/table :users)\n  (db-core/database db))\n&quot;, :offset 97, :ns &quot;learn.db&quot;} {:command &quot;(db-core/select\n  users\n  (db-core/fields :id))&quot;, :offset 47, :ns &quot;learn.db&quot;} {:command &quot;(declare users)&quot;, :offset 15, :ns &quot;learn.db&quot;} {:command &quot;(db-core/defentity\n  users\n  (db-core/pk :id)\n  (db-core/table :users)\n  (db-core/database db))&quot;, :offset 95, :ns &quot;learn.db&quot;} {:command &quot;(db-core/select\n  users)&quot;, :offset 24, :ns &quot;learn.db&quot;} {:command &quot;(db-core/select\n  users2)&quot;, :offset 25, :ns &quot;learn.db&quot;} {:command &quot;(def base (-&gt; (db-core/select* users)\n              (db-core/fields :id)))\n\n(-&gt; base\n    (db-core/select))&quot;, :offset 106, :ns &quot;learn.db&quot;} {:command &quot;(ns datawarehouse.dbsqldetail\n  (:use [korma.db]\n        [korma.core]))\n\n#_(defdb stock-db (postgres {:db \&quot;stock\&quot;\n                           :user \&quot;postgres\&quot;\n                           :password \&quot;a5235013\&quot;}))\n\n(defdb stock-db (mysql {:db \&quot;grap\&quot;\n                           :user \&quot;postgres\&quot;\n                           :password \&quot;a5235013\&quot;}))\n\n(defentity vegetablepics\n           (database stock-db))\n\n(defentity vegetables\n           (database stock-db))\n\n(defn insert-vegetables [vegetable]\n  (-&gt; (insert* vegetables)\n      (values vegetable)\n      (insert)))&quot;, :offset 558, :ns &quot;grapdata.core&quot;} {:command &quot;(insert-vegetables [1 2 3])&quot;, :offset 27, :ns &quot;datawarehouse.dbsqldetail&quot;} {:command &quot;(ns learn.db\n  (:require [korma.db :refer [defdb mysql]]\n            [korma.core :as korma]))\n\n(defdb db (mysql\n                {:db    \&quot;grap\&quot;\n                :user     \&quot;root\&quot;\n                :password \&quot;a5235013\&quot;}))\n&quot;, :offset 216, :ns &quot;grapdata.core&quot;} {:command &quot;\n(declare users)\n\n(korma/defentity\n  users\n  (korma/pk :id)\n  (korma/table :users)\n  (korma/database db))\n&quot;, :offset 106, :ns &quot;learn.db&quot;} {:command &quot;(korma/select\n  users)\n&quot;, :offset 23, :ns &quot;learn.db&quot;} {:command &quot;(ns learn.db\n  (:require [korma.db :refer [defdb mysql]]\n            [korma.core :as korma]))\n\n(defdb db (mysql\n                {:db    \&quot;grap\&quot;\n                :user     \&quot;root\&quot;\n                :password \&quot;a5235013\&quot;}))\n\n(declare users)\n\n(korma/defentity users)\n\n(korma/select\n  users)\n&quot;, :offset 282, :ns &quot;grapdata.core&quot;} {:command &quot;(ns learn.db\n  (:require [hugsql.core :as hugsql]))\n\n(hugsql/def-db-fns \&quot;resources/sql/users.sql\&quot;)\n&quot;, :offset 99, :ns &quot;grapdata.core&quot;} {:command &quot;(hugsql/def-db-fns \&quot;src/users.sql\&quot;)&quot;, :offset 35, :ns &quot;learn.db&quot;} {:command &quot;(def db\n  {:classname \&quot;com.mysql.jdbc.Driver\&quot;\n   :subprotocol \&quot;mysql\&quot;\n   :subname \&quot;//127.0.0.1/grap\&quot;\n   :user \&quot;root\&quot;\n   :password \&quot;a5235013\&quot;\n   :sslmode \&quot;require\&quot;})\n\n\n(hugsql/def-db-fns db \&quot;sql/users.sql\&quot;)\n&quot;, :offset 206, :ns &quot;learn.db&quot;} {:command &quot;(hugsql/def-db-fns \&quot;sql/users.sql\&quot; db)&quot;, :offset 38, :ns &quot;learn.db&quot;} {:command &quot;(get-all-users)&quot;, :offset 15, :ns &quot;learn.db&quot;} {:command &quot;(get-all-users 1)&quot;, :offset 17, :ns &quot;learn.db&quot;} {:command &quot;(create-users-tables db)&quot;, :offset 24, :ns &quot;learn.db&quot;} {:command &quot;(insert-user\n  {:firstname \&quot;haha\&quot;\n   :lastname \&quot;yesheng\&quot;\n   :email \&quot;haha@hyesheng\&quot;\n   :password \&quot;a5235013\&quot;\n   :sex 1\n   :enable 1\n   :birthday \&quot;1990-01-01\&quot;})&quot;, :offset 157, :ns &quot;learn.db&quot;} {:command &quot;(drop-users-table db)&quot;, :offset 21, :ns &quot;learn.db&quot;} {:command &quot;(create-users-table db)&quot;, :offset 23, :ns &quot;learn.db&quot;} {:command &quot;(insert-user db\n  {:firstname \&quot;haha\&quot;\n   :lastname \&quot;yesheng\&quot;\n   :email \&quot;haha@hyesheng\&quot;\n   :password \&quot;a5235013\&quot;\n   :sex 1\n   :enable 1\n   :birthday \&quot;1990-01-01\&quot;})&quot;, :offset 160, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-sqlvec {:data {:email \&quot;dafsadf\&quot; :firstname \&quot;dddd\&quot; :lastname \&quot;ssss\&quot;}})&quot;, :offset 83, :ns &quot;learn.db&quot;} {:command &quot;(mysql-update-by-id-sqlvec {:updates {:email \&quot;dddddd\&quot;} :id 1})&quot;, :offset 62, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert2-sqlvec {:table \&quot;users\&quot; :cols [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]})&quot;, :offset 112, :ns &quot;learn.db&quot;} {:command &quot;(defn mysql-insert [table data]\n  (mysql-insert-map {:table table :cols (keys data) :vals (vals data)}))&quot;, :offset 104, :ns &quot;learn.db&quot;} {:command &quot;(defn- randnum []\n  (rand-nth (shuffle (range [100000 999999]))))\n\n(randnum)&quot;, :offset 76, :ns &quot;learn.facebook&quot;} {:command &quot;(ns learn.facebook\n  (:require [learn.db :as ldb]))&quot;, :offset 51, :ns &quot;learn.facebook&quot;} {:command &quot;\n(defn- randnum []\n  (rand-nth (shuffle (range [100000 999999]))))\n\n(randnum)\n&quot;, :offset 78, :ns &quot;learn.facebook&quot;} {:command &quot;(shuffle (range [100000 999999]))&quot;, :offset 33, :ns &quot;learn.facebook&quot;} {:command &quot;(range [100000 999999])&quot;, :offset 23, :ns &quot;learn.facebook&quot;} {:command &quot;(defn- randnum []\n  (rand-nth (shuffle (range 100000 999999))))&quot;, :offset 63, :ns &quot;learn.facebook&quot;} {:command &quot;(randnum)&quot;, :offset 9, :ns &quot;learn.facebook&quot;} {:command &quot;(defn gen-name-data-as-map []\n  (let [gender (gender)\n        first-name (condp = gender\n                     :male (male-name)\n                     :female (female-name)\n                     :other ((rand-nth [male-name female-name])))\n        surnames (-&gt;&gt; default-nextmap\n                      (partial generate-single-name)\n                      (repeatedly (dec (num-names)))\n                      vec)]\n    {:gender gender\n     :first-name first-name\n     :surnames surnames}))&quot;, :offset 483, :ns &quot;learn.name&quot;} {:command &quot;(defn male-name [] (generate-single-name male-name-map))&quot;, :offset 56, :ns &quot;learn.name&quot;} {:command &quot;(ns learn.name)\n\n(defn generate-sequence\n  \&quot;\n  Generate a sequence using Markov chain by following choices captured in\n  'nextmap'.  Start with an initial sequence/key randomly chosen from\n  the keys in the map.  Select next letter randomly based on the\n  available ones for that key.  Collect all letters this way, adding\n  them and changing the current key until STOP-STATE symbol is reached.\n  \&quot;\n  [nextmap]\n  (loop [current (rand-nth (keys nextmap))\n         all current\n         next (rand-nth (vec (nextmap current)))]\n    (if (= next 'STOP-STATE)\n      all\n      (let [next-current (concat (rest current) [next])\n            next-all (concat all [next])\n            next-next (rand-nth (vec (nextmap next-current)))]\n        (recur next-current next-all next-next)))))\n&quot;, :offset 776, :ns &quot;grapdata.core&quot;} {:command &quot;\n(defn generate-single-name\n  \&quot;\n  For a sequence of letters, captialize and return as string.\n  \&quot;\n  [nextmap]\n  (-&gt;&gt; (generate-sequence nextmap)\n       (apply str)\n       clojure.string/capitalize))\n\n\n(defn- get-name-data [f]\n  (-&gt;&gt; f\n       clojure.java.io/resource\n       slurp\n       clojure.string/split-lines))\n\n(defn add-to-chain [chainlen chainmap chain]\n  (let [key (take chainlen chain)\n        nxt (nth chain chainlen)\n        lookup (chainmap key)\n        curvec (if lookup lookup #{})]\n    (assoc chainmap key (conj curvec nxt))))\n\n&quot;, :offset 544, :ns &quot;learn.name&quot;} {:command &quot;\n(defn make-nextmap\n  \&quot;\n  Make a map of next values in a Markov chain, given a vector of\n  input sequences with length == chainlen+1, where the first\n  `chainlen` values of each are the keys, and the values are a vector\n  of the last letter seen following that sequence.  For example,\n  `((a l f r) (a l f i)) --&gt; {(a l f) [r i]}`\n  \&quot;\n  [chainlen parts]\n  (reduce (partial add-to-chain chainlen) {} parts))\n\n(defn build-map-from-seqs [chainlen input-sequences]\n  (make-nextmap chainlen (-&gt;&gt; input-sequences\n                              (map vec)\n                              (map #(conj % 'STOP-STATE))\n                              (map #(partition (inc chainlen) 1 %))\n                              (apply concat))))\n&quot;, :offset 721, :ns &quot;learn.name&quot;} {:command &quot;\n(defn build-map-from-strings [chainlen strings]\n  (-&gt;&gt; strings\n       (map clojure.string/lower-case)\n       (build-map-from-seqs chainlen)))\n\n(defn name-map-from-resource-file [fname]\n  (-&gt;&gt; fname\n       get-name-data\n       (build-map-from-strings 4)))\n\n(defn gender [] (-&gt;&gt; [:male :female]\n                     (repeat 20)\n                     (apply concat)\n                     (concat [:other])\n                     rand-nth))&quot;, :offset 433, :ns &quot;learn.name&quot;} {:command &quot;\n(def default-nextmap (name-map-from-resource-file \&quot;name/names.txt\&quot;))\n(def male-name-map (name-map-from-resource-file \&quot;name/male-names.txt\&quot;))\n(def female-name-map (name-map-from-resource-file \&quot;name/female-names.txt\&quot;))&quot;, :offset 217, :ns &quot;learn.name&quot;} {:command &quot;(def default-nextmap (name-map-from-resource-file \&quot;name/names.txt\&quot;))&quot;, :offset 68, :ns &quot;learn.name&quot;} {:command &quot;(def male-name-map (name-map-from-resource-file \&quot;name/male-names.txt\&quot;))&quot;, :offset 71, :ns &quot;learn.name&quot;} {:command &quot;(def female-name-map (name-map-from-resource-file \&quot;name/female-names.txt\&quot;))&quot;, :offset 75, :ns &quot;learn.name&quot;} {:command &quot;(defn male-name [] (generate-single-name male-name-map))\n(defn female-name [] (generate-single-name female-name-map))\n\n(defn num-names [] (rand-nth (concat (repeat 5 2)\n                                     [1 3 3 4 5])))\n&quot;, :offset 221, :ns &quot;learn.name&quot;} {:command &quot;\n(defn gen-name-data-as-map []\n  (let [gender (gender)\n        first-name (condp = gender\n                     :male (male-name)\n                     :female (female-name)\n                     :other ((rand-nth [male-name female-name])))\n        surnames (-&gt;&gt; default-nextmap\n                      (partial generate-single-name)\n                      (repeatedly (dec (num-names)))\n                      vec)]\n    {:gender gender\n     :first-name first-name\n     :surnames surnames}))&quot;, :offset 484, :ns &quot;learn.name&quot;} {:command &quot;(gen-name-data-as-map)&quot;, :offset 22, :ns &quot;learn.name&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        {:email (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n         :password (str \&quot;PA\&quot; (rand-nth range-num))\n         :name (str (:first-name name-generate) \&quot; \&quot; (-&gt; name-generate :surnames first))}))))&quot;, :offset 377, :ns &quot;learn.facebook&quot;} {:command &quot;(ns learn.facebook\n  (:require [learn.db :as ldb]\n            [learn.name :as lname]))&quot;, :offset 86, :ns &quot;learn.facebook&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {:email (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  :password (str \&quot;PA\&quot; (rand-nth range-num))\n                  :name (str (:first-name name-generate) \&quot; \&quot; (-&gt; name-generate :surnames first))})))))&quot;, :offset 405, :ns &quot;learn.facebook&quot;} {:command &quot;(ns learn.name)\n\n(defn generate-sequence\n  \&quot;\n  Generate a sequence using Markov chain by following choices captured in\n  'nextmap'.  Start with an initial sequence/key randomly chosen from\n  the keys in the map.  Select next letter randomly based on the\n  available ones for that key.  Collect all letters this way, adding\n  them and changing the current key until STOP-STATE symbol is reached.\n  \&quot;\n  [nextmap]\n  (loop [current (rand-nth (keys nextmap))\n         all current\n         next (rand-nth (vec (nextmap current)))]\n    (if (= next 'STOP-STATE)\n      all\n      (let [next-current (concat (rest current) [next])\n            next-all (concat all [next])\n            next-next (rand-nth (vec (nextmap next-current)))]\n        (recur next-current next-all next-next)))))\n\n\n(defn generate-single-name\n  \&quot;\n  For a sequence of letters, captialize and return as string.\n  \&quot;\n  [nextmap]\n  (-&gt;&gt; (generate-sequence nextmap)\n       (apply str)\n       clojure.string/capitalize))\n\n\n(defn- get-name-data [f]\n  (-&gt;&gt; f\n       clojure.java.io/resource\n       slurp\n       clojure.string/split-lines))\n\n(defn add-to-chain [chainlen chainmap chain]\n  (let [key (take chainlen chain)\n        nxt (nth chain chainlen)\n        lookup (chainmap key)\n        curvec (if lookup lookup #{})]\n    (assoc chainmap key (conj curvec nxt))))\n\n\n(defn make-nextmap\n  \&quot;\n  Make a map of next values in a Markov chain, given a vector of\n  input sequences with length == chainlen+1, where the first\n  `chainlen` values of each are the keys, and the values are a vector\n  of the last letter seen following that sequence.  For example,\n  `((a l f r) (a l f i)) --&gt; {(a l f) [r i]}`\n  \&quot;\n  [chainlen parts]\n  (reduce (partial add-to-chain chainlen) {} parts))\n\n(defn build-map-from-seqs [chainlen input-sequences]\n  (make-nextmap chainlen (-&gt;&gt; input-sequences\n                              (map vec)\n                              (map #(conj % 'STOP-STATE))\n                              (map #(partition (inc chainlen) 1 %))\n                              (apply concat))))\n\n(defn build-map-from-strings [chainlen strings]\n  (-&gt;&gt; strings\n       (map clojure.string/lower-case)\n       (build-map-from-seqs chainlen)))\n\n(defn name-map-from-resource-file [fname]\n  (-&gt;&gt; fname\n       get-name-data\n       (build-map-from-strings 4)))\n\n(defn gender [] (-&gt;&gt; [:male :female]\n                     (repeat 20)\n                     (apply concat)\n                     (concat [:other])\n                     rand-nth))\n\n\n(def default-nextmap (name-map-from-resource-file \&quot;name/names.txt\&quot;))\n(def male-name-map (name-map-from-resource-file \&quot;name/male-names.txt\&quot;))\n(def female-name-map (name-map-from-resource-file \&quot;name/female-names.txt\&quot;))\n\n(defn male-name [] (generate-single-name male-name-map))\n(defn female-name [] (generate-single-name female-name-map))\n\n(defn num-names [] (rand-nth (concat (repeat 5 2)\n                                     [1 3 3 4 5])))\n\n(defn gen-name-data-as-map []\n  (let [gender (gender)\n        first-name (condp = gender\n                     :male (male-name)\n                     :female (female-name)\n                     :other ((rand-nth [male-name female-name])))\n        surnames (-&gt;&gt; default-nextmap\n                      (partial generate-single-name)\n                      (repeatedly (dec (num-names)))\n                      vec\n                      (#(if (empty? %) first-name %)))]\n    {:gender gender\n     :first-name first-name\n     :surnames surnames}))\n&quot;, :offset 3456, :ns &quot;grapdata.core&quot;} {:command &quot;(ns learn.name)\n\n(defn generate-sequence\n  \&quot;\n  Generate a sequence using Markov chain by following choices captured in\n  'nextmap'.  Start with an initial sequence/key randomly chosen from\n  the keys in the map.  Select next letter randomly based on the\n  available ones for that key.  Collect all letters this way, adding\n  them and changing the current key until STOP-STATE symbol is reached.\n  \&quot;\n  [nextmap]\n  (loop [current (rand-nth (keys nextmap))\n         all current\n         next (rand-nth (vec (nextmap current)))]\n    (if (= next 'STOP-STATE)\n      all\n      (let [next-current (concat (rest current) [next])\n            next-all (concat all [next])\n            next-next (rand-nth (vec (nextmap next-current)))]\n        (recur next-current next-all next-next)))))\n\n\n(defn generate-single-name\n  \&quot;\n  For a sequence of letters, captialize and return as string.\n  \&quot;\n  [nextmap]\n  (-&gt;&gt; (generate-sequence nextmap)\n       (apply str)\n       clojure.string/capitalize))\n\n\n(defn- get-name-data [f]\n  (-&gt;&gt; f\n       clojure.java.io/resource\n       slurp\n       clojure.string/split-lines))\n\n(defn add-to-chain [chainlen chainmap chain]\n  (let [key (take chainlen chain)\n        nxt (nth chain chainlen)\n        lookup (chainmap key)\n        curvec (if lookup lookup #{})]\n    (assoc chainmap key (conj curvec nxt))))\n\n\n(defn make-nextmap\n  \&quot;\n  Make a map of next values in a Markov chain, given a vector of\n  input sequences with length == chainlen+1, where the first\n  `chainlen` values of each are the keys, and the values are a vector\n  of the last letter seen following that sequence.  For example,\n  `((a l f r) (a l f i)) --&gt; {(a l f) [r i]}`\n  \&quot;\n  [chainlen parts]\n  (reduce (partial add-to-chain chainlen) {} parts))\n\n(defn build-map-from-seqs [chainlen input-sequences]\n  (make-nextmap chainlen (-&gt;&gt; input-sequences\n                              (map vec)\n                              (map #(conj % 'STOP-STATE))\n                              (map #(partition (inc chainlen) 1 %))\n                              (apply concat))))\n\n(defn build-map-from-strings [chainlen strings]\n  (-&gt;&gt; strings\n       (map clojure.string/lower-case)\n       (build-map-from-seqs chainlen)))\n\n(defn name-map-from-resource-file [fname]\n  (-&gt;&gt; fname\n       get-name-data\n       (build-map-from-strings 4)))\n\n(defn gender [] (-&gt;&gt; [:male :female]\n                     (repeat 20)\n                     (apply concat)\n                     (concat [:other])\n                     rand-nth))\n\n\n(def default-nextmap (name-map-from-resource-file \&quot;name/names.txt\&quot;))\n(def male-name-map (name-map-from-resource-file \&quot;name/male-names.txt\&quot;))\n(def female-name-map (name-map-from-resource-file \&quot;name/female-names.txt\&quot;))\n\n(defn male-name [] (generate-single-name male-name-map))\n(defn female-name [] (generate-single-name female-name-map))\n\n(defn num-names [] (rand-nth (concat (repeat 5 2)\n                                     [1 3 3 4 5])))\n\n(defn gen-name-data-as-map []\n  (let [gender (gender)\n        first-name (condp = gender\n                     :male (male-name)\n                     :female (female-name)\n                     :other ((rand-nth [male-name female-name])))\n        surnames (-&gt;&gt; default-nextmap\n                      (partial generate-single-name)\n                      (repeatedly (dec (num-names)))\n                      vec\n                      (#(if (empty? %) first-name [%])))]\n    {:gender gender\n     :first-name first-name\n     :surnames surnames}))\n&quot;, :offset 3458, :ns &quot;grapdata.core&quot;} {:command &quot;(ns learn.name)\n\n(defn generate-sequence\n  \&quot;\n  Generate a sequence using Markov chain by following choices captured in\n  'nextmap'.  Start with an initial sequence/key randomly chosen from\n  the keys in the map.  Select next letter randomly based on the\n  available ones for that key.  Collect all letters this way, adding\n  them and changing the current key until STOP-STATE symbol is reached.\n  \&quot;\n  [nextmap]\n  (loop [current (rand-nth (keys nextmap))\n         all current\n         next (rand-nth (vec (nextmap current)))]\n    (if (= next 'STOP-STATE)\n      all\n      (let [next-current (concat (rest current) [next])\n            next-all (concat all [next])\n            next-next (rand-nth (vec (nextmap next-current)))]\n        (recur next-current next-all next-next)))))\n\n\n(defn generate-single-name\n  \&quot;\n  For a sequence of letters, captialize and return as string.\n  \&quot;\n  [nextmap]\n  (-&gt;&gt; (generate-sequence nextmap)\n       (apply str)\n       clojure.string/capitalize))\n\n\n(defn- get-name-data [f]\n  (-&gt;&gt; f\n       clojure.java.io/resource\n       slurp\n       clojure.string/split-lines))\n\n(defn add-to-chain [chainlen chainmap chain]\n  (let [key (take chainlen chain)\n        nxt (nth chain chainlen)\n        lookup (chainmap key)\n        curvec (if lookup lookup #{})]\n    (assoc chainmap key (conj curvec nxt))))\n\n\n(defn make-nextmap\n  \&quot;\n  Make a map of next values in a Markov chain, given a vector of\n  input sequences with length == chainlen+1, where the first\n  `chainlen` values of each are the keys, and the values are a vector\n  of the last letter seen following that sequence.  For example,\n  `((a l f r) (a l f i)) --&gt; {(a l f) [r i]}`\n  \&quot;\n  [chainlen parts]\n  (reduce (partial add-to-chain chainlen) {} parts))\n\n(defn build-map-from-seqs [chainlen input-sequences]\n  (make-nextmap chainlen (-&gt;&gt; input-sequences\n                              (map vec)\n                              (map #(conj % 'STOP-STATE))\n                              (map #(partition (inc chainlen) 1 %))\n                              (apply concat))))\n\n(defn build-map-from-strings [chainlen strings]\n  (-&gt;&gt; strings\n       (map clojure.string/lower-case)\n       (build-map-from-seqs chainlen)))\n\n(defn name-map-from-resource-file [fname]\n  (-&gt;&gt; fname\n       get-name-data\n       (build-map-from-strings 4)))\n\n(defn gender [] (-&gt;&gt; [:male :female]\n                     (repeat 20)\n                     (apply concat)\n                     (concat [:other])\n                     rand-nth))\n\n\n(def default-nextmap (name-map-from-resource-file \&quot;name/names.txt\&quot;))\n(def male-name-map (name-map-from-resource-file \&quot;name/male-names.txt\&quot;))\n(def female-name-map (name-map-from-resource-file \&quot;name/female-names.txt\&quot;))\n\n(defn male-name [] (generate-single-name male-name-map))\n(defn female-name [] (generate-single-name female-name-map))\n\n(defn num-names [] (rand-nth (concat (repeat 5 2)\n                                     [1 3 3 4 5])))\n\n(defn gen-name-data-as-map []\n  (let [gender (gender)\n        first-name (condp = gender\n                     :male (male-name)\n                     :female (female-name)\n                     :other ((rand-nth [male-name female-name])))\n        surnames (-&gt;&gt; default-nextmap\n                      (partial generate-single-name)\n                      (repeatedly (dec (num-names)))\n                      vec\n                      (#(if (empty? %) [first-name] %)))]\n    {:gender gender\n     :first-name first-name\n     :surnames surnames}))\n&quot;, :offset 3458, :ns &quot;grapdata.core&quot;} {:command &quot;(ns learn.facebook\n  (:require [learn.db :as ldb]\n            [learn.name :as lname]))\n\n(defn- create-one-email [data]\n  (ldb/mysql-insert \&quot;users\&quot; data))\n\n\n(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {:email (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  :password (str \&quot;PA\&quot; (rand-nth range-num))\n                  :name (str (:first-name name-generate) \&quot; \&quot; (-&gt; name-generate :surnames first))})))))\n\n(create-email-users 10)&quot;, :offset 586, :ns &quot;grapdata.core&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {:email (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  :password (str \&quot;PA\&quot; (rand-nth range-num))\n                  :name (str (:first-name name-generate) \&quot; \&quot; (-&gt; name-generate :surnames first))\n                  :sex (if (= \&quot;female\&quot; (:gender name-generate)) 0 1)})))))&quot;, :offset 474, :ns &quot;learn.facebook&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {:email (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  :password (str \&quot;PA\&quot; (rand-nth range-num))\n                  :name (str (:first-name name-generate) \&quot; \&quot; (-&gt; name-generate :surnames first))\n                  :sex (if (= \&quot;female\&quot; (:gender name-generate)) 0 1)\n                  :temp (name-generate)})))))&quot;, :offset 514, :ns &quot;learn.facebook&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {:email (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  :password (str \&quot;PA\&quot; (rand-nth range-num))\n                  :name (str (:first-name name-generate) \&quot; \&quot; (-&gt; name-generate :surnames first))\n                  :sex (if (= \&quot;female\&quot; (:gender name-generate)) 0 1)\n                  :temp name-generate})))))&quot;, :offset 512, :ns &quot;learn.facebook&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {:email (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  :password (str \&quot;PA\&quot; (rand-nth range-num))\n                  :name (str (:first-name name-generate) \&quot; \&quot; (-&gt; name-generate :surnames first))\n                  :sex (if (= :female (:gender name-generate)) 0 1)\n                  :temp name-generate})))))&quot;, :offset 511, :ns &quot;learn.facebook&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {\&quot;email\&quot; (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  \&quot;password\&quot; (str \&quot;PA\&quot; (rand-nth range-num))\n                  \&quot;firstname\&quot; (:first-name name-generate)\n                  \&quot;lastname\&quot; (-&gt; name-generate :surnames first)\n                  \&quot;sex\&quot; (if (= :female (:gender name-generate)) 0 1)\n                  \&quot;enable\&quot; 1\n                  \&quot;birthday\&quot; (str (range 1985 1999) \&quot;-\&quot; (format \&quot;%02d\&quot; (range 1 12)) \&quot;-\&quot; (format \&quot;%02d\&quot; (range 1 28)))})))))&quot;, :offset 649, :ns &quot;learn.facebook&quot;} {:command &quot;(create-email-users 10)&quot;, :offset 23, :ns &quot;learn.facebook&quot;} {:command &quot;\n(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {\&quot;email\&quot; (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  \&quot;password\&quot; (str \&quot;PA\&quot; (rand-nth range-num))\n                  \&quot;firstname\&quot; (:first-name name-generate)\n                  \&quot;lastname\&quot; (-&gt; name-generate :surnames first)\n                  \&quot;sex\&quot; (if (= :female (:gender name-generate)) 0 1)\n                  \&quot;enable\&quot; 1\n                  \&quot;birthday\&quot; (str (range 1985 1999) \&quot;-\&quot; (format \&quot;%02d\&quot; (str (range 1 12))) \&quot;-\&quot; (format \&quot;%02d\&quot; (str (range 1 28))))})))))\n\n(create-email-users 10)&quot;, :offset 687, :ns &quot;learn.facebook&quot;} {:command &quot;(format \&quot;%05d\&quot; 3)&quot;, :offset 17, :ns &quot;grapdata.core&quot;} {:command &quot;(range 1 12)&quot;, :offset 12, :ns &quot;grapdata.core&quot;} {:command &quot;(rand 12)&quot;, :offset 9, :ns &quot;grapdata.core&quot;} {:command &quot;(rand-int 12)&quot;, :offset 13, :ns &quot;grapdata.core&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (println {\&quot;email\&quot; (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  \&quot;password\&quot; (str \&quot;PA\&quot; (rand-nth range-num))\n                  \&quot;firstname\&quot; (:first-name name-generate)\n                  \&quot;lastname\&quot; (-&gt; name-generate :surnames first)\n                  \&quot;sex\&quot; (if (= :female (:gender name-generate)) 0 1)\n                  \&quot;enable\&quot; 1\n                  \&quot;birthday\&quot; (str (+ (rand-int 15) 1987) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 11) 1)) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 27) 1)))})))))\n\n(create-email-users 10)&quot;, :offset 693, :ns &quot;learn.facebook&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (create-one-email {\&quot;email\&quot; (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n                  \&quot;password\&quot; (str \&quot;PA,a\&quot; (rand-nth range-num))\n                  \&quot;firstname\&quot; (:first-name name-generate)\n                  \&quot;lastname\&quot; (-&gt; name-generate :surnames first)\n                  \&quot;sex\&quot; (if (= :female (:gender name-generate)) 0 1)\n                  \&quot;enable\&quot; 1\n                  \&quot;birthday\&quot; (str (+ (rand-int 15) 1987) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 11) 1)) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 27) 1)))})))))\n\n(create-email-users 10)&quot;, :offset 704, :ns &quot;learn.facebook&quot;} {:command &quot;(ns learn.db\n  (:require [hugsql.core :as hugsql]))&quot;, :offset 51, :ns &quot;learn.db&quot;} {:command &quot;\n(def db\n  {:classname \&quot;com.mysql.jdbc.Driver\&quot;\n   :subprotocol \&quot;mysql\&quot;\n   :subname \&quot;//127.0.0.1/grap\&quot;\n   :user \&quot;root\&quot;\n   :password \&quot;a5235013\&quot;\n   :sslmode \&quot;require\&quot;})\n\n\n(hugsql/def-db-fns \&quot;sql/users.sql\&quot;)\n&quot;, :offset 204, :ns &quot;learn.db&quot;} {:command &quot;(defn mysql-insert [table data]\n  (mysql-insert-map db {:table table :cols (keys data) :vals (vals data)}))&quot;, :offset 107, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert \&quot;users\&quot; {\&quot;name\&quot; \&quot;sdfsdf\&quot;})&quot;, :offset 40, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map db {:table \&quot;users\&quot; :cols [\&quot;name\&quot;] :vals [\&quot;sdfdfsdf\&quot;]})&quot;, :offset 72, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert \&quot;users\&quot; {\&quot;email\&quot; \&quot;tesee@hyesheng.com\&quot; \&quot;firstname\&quot; \&quot;dfsdfsdf\&quot;})&quot;, :offset 76, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map\n  {:table \&quot;users\&quot; :cols [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]})&quot;, :offset 110, :ns &quot;learn.db&quot;} {:command &quot;(hugsql/def-sqlvec-fns \&quot;sql/users.sql\&quot;)&quot;, :offset 39, :ns &quot;learn.db&quot;} {:command &quot;(mysql-update-by-id-sqlvec {:updates {:email \&quot;dddddd\&quot;} :id 1 :table \&quot;users\&quot;})&quot;, :offset 77, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-sqlvec {:data {:email \&quot;dafsadf\&quot; :firstname \&quot;dddd\&quot; :lastname \&quot;ssss\&quot;}\n                      :table \&quot;users\&quot;})&quot;, :offset 120, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map-sqlvec db\n  {:table \&quot;users\&quot; :cols [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]})&quot;, :offset 120, :ns &quot;learn.db&quot;} {:command &quot;(def db\n  {:classname \&quot;com.mysql.jdbc.Driver\&quot;\n   :subprotocol \&quot;mysql\&quot;\n   :subname \&quot;//127.0.0.1/grap\&quot;\n   :user \&quot;root\&quot;\n   :password \&quot;a5235013\&quot;\n   :sslmode \&quot;require\&quot;})&quot;, :offset 164, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map db\n  {:table \&quot;users\&quot; :cols [:email :firstname :lastname] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]})&quot;, :offset 110, :ns &quot;learn.db&quot;} {:command &quot;(def db\n  {:classname \&quot;com.mysql.jdbc.Driver\&quot;\n   :subprotocol \&quot;mysql\&quot;\n   :subname \&quot;//127.0.0.1/grap\&quot;\n   :user \&quot;root\&quot;\n   :password \&quot;a5235013\&quot;})&quot;, :offset 142, :ns &quot;learn.db&quot;} {:command &quot;(get-all-users-sqlvec)&quot;, :offset 22, :ns &quot;learn.db&quot;} {:command &quot;(get-all-users db)&quot;, :offset 18, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map db\n  )&quot;, :offset 24, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map db\n  {:table \&quot;users\&quot; :cols (seq [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;]) :vals (seq [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;])})&quot;, :offset 125, :ns &quot;learn.db&quot;} {:command &quot;(seq [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;])&quot;, :offset 33, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map-sqlvec\n  {:table \&quot;users\&quot; :cols [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]})&quot;, :offset 117, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map db\n  {:table \&quot;users\&quot; :cols [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]})&quot;, :offset 113, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map db\n  {:table \&quot;users\&quot; :cols [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]}\n                  {:adapter \&quot;clojure.java.jdbc\&quot;})&quot;, :offset 162, :ns &quot;learn.db&quot;} {:command &quot;(hugsql/def-db-fns \&quot;sql/users.sql\&quot; {:adapter \&quot;clojure.java.jdbc\&quot;})&quot;, :offset 66, :ns &quot;learn.db&quot;} {:command &quot;(ns learn.db\n  (:require [hugsql.core :as hugsql]))\n\n(def db\n  {:classname \&quot;com.mysql.jdbc.Driver\&quot;\n   :subprotocol \&quot;mysql\&quot;\n   :subname \&quot;//127.0.0.1/grap\&quot;\n   :user \&quot;root\&quot;\n   :password \&quot;a5235013\&quot;\n   :sslmode \&quot;require\&quot;})\n&quot;, :offset 218, :ns &quot;grapdata.core&quot;} {:command &quot;(hugsql/def-db-fns \&quot;sql/users.sql\&quot; {:adapter \&quot;clojure.jdbc\&quot;})&quot;, :offset 61, :ns &quot;learn.db&quot;} {:command &quot;(hugsql/def-db-fns \&quot;sql/users.sql\&quot;)&quot;, :offset 35, :ns &quot;learn.db&quot;} {:command &quot;(mysql-insert-map db\n                  {:table \&quot;users\&quot; :cols [\&quot;email\&quot; \&quot;firstname\&quot; \&quot;lastname\&quot;] :vals [\&quot;sdfsdf\&quot; \&quot;sdfgggg\&quot; \&quot;1111\&quot;]})&quot;, :offset 129, :ns &quot;learn.db&quot;} {:command &quot;(ns learn.db\n  (:require [hugsql.core :as hugsql]))\n\n(def db\n  {:classname \&quot;com.mysql.jdbc.Driver\&quot;\n   :subprotocol \&quot;mysql\&quot;\n   :subname \&quot;//127.0.0.1/grap\&quot;\n   :user \&quot;root\&quot;\n   :password \&quot;a5235013\&quot;\n   :sslmode \&quot;require\&quot;})\n\n\n(hugsql/def-db-fns \&quot;sql/users.sql\&quot;)\n\n(defn mysql-insert [table data]\n  (mysql-insert-map db {:table table :cols (keys data) :vals (vals data)}))\n\n(hugsql/def-sqlvec-fns \&quot;sql/users.sql\&quot;)&quot;, :offset 405, :ns &quot;grapdata.core&quot;} {:command &quot;(ns learn.facebook\n  (:require [learn.db :as ldb]\n            [learn.name :as lname]))\n\n(defn- create-one-email [data]\n  (ldb/mysql-insert \&quot;users\&quot; data))\n\n\n(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [_ n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (create-one-email\n          {\&quot;email\&quot; (str \&quot;SZ\&quot; (rand-nth range-num) \&quot;@hyesheng.com\&quot;)\n           \&quot;firstname\&quot; (:first-name name-generate)\n           \&quot;lastname\&quot; (-&gt; name-generate :surnames first)\n           \&quot;sex\&quot; (if (= :female (:gender name-generate)) 0 1)\n           \&quot;enable\&quot; 1\n           \&quot;birthday\&quot; (str (+ (rand-int 15) 1987) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 11) 1)) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 27) 1)))})))))\n\n(create-email-users 10)&quot;, :offset 772, :ns &quot;grapdata.core&quot;} {:command &quot;(defn create-email-users\n  \&quot;创建N个邮箱账号\&quot;\n  [n]\n  (let [range-num (shuffle (range 100000 999999))]\n    (dotimes [i n]\n      (let [name-generate (lname/gen-name-data-as-map)]\n        (create-one-email\n          {\&quot;email\&quot; (str \&quot;SZ\&quot; (get i range-num) \&quot;@hyesheng.com\&quot;)\n           \&quot;password\&quot; (str \&quot;PW,p\&quot; (get i range-num))\n           \&quot;firstname\&quot; (:first-name name-generate)\n           \&quot;lastname\&quot; (-&gt; name-generate :surnames first)\n           \&quot;sex\&quot; (if (= :female (:gender name-generate)) 0 1)\n           \&quot;enable\&quot; 1\n           \&quot;birthday\&quot; (str (+ (rand-int 15) 1987) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 11) 1)) \&quot;-\&quot; (format \&quot;%02d\&quot; (+ (rand-int 27) 1)))})))))\n\n(create-email-users 10)&quot;, :offset 666, :ns &quot;learn.facebook&quot;} {:command &quot;(shuffle (range 100000 999999))&quot;, :offset 31, :ns &quot;grapdata.core&quot;}], :remote []}}</component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Clojure REPL.repl">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -278,169 +257,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="ClojureREPL" factoryName="Local">
-      <setting name="replType" value="1" />
-      <module name="" />
-      <setting name="jvmArgs" value="" />
-      <setting name="parameters" value="" />
-      <setting name="workingDir" value="" />
-      <setting name="profiles" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
-      <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -461,77 +277,12 @@
       </option>
       <envs />
       <patterns />
-      <method />
     </configuration>
-    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="grapproject" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -539,13 +290,6 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
-      <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -573,119 +317,490 @@
       <envs />
       <properties />
       <listeners />
-      <method />
     </configuration>
-    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
+    <configuration name="newdriver" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="grapdata" />
+      <setting name="path" value="$PROJECT_DIR$/src/learn/newdriver.clj" />
+      <setting name="namespace" value="" />
+      <setting name="useLein" value="false" />
+      <setting name="profiles" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/src/learn" />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <method />
+    <configuration name="repl" type="ClojureREPL" factoryName="Local">
+      <setting name="replType" value="1" />
+      <module name="grapdata" />
+      <setting name="jvmArgs" value="" />
+      <setting name="parameters" value="" />
+      <setting name="workingDir" value="$PROJECT_DIR$" />
+      <setting name="profiles" value="" />
     </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
-      <scripts />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
-    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Clojure REPL.repl" />
+      <item index="1" class="java.lang.String" itemvalue="Clojure Application.newdriver" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Clojure Application.newdriver" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f3212c24-f507-43c0-9bc5-f56f3d3fd590" name="Default" comment="" />
-      <created>1459330498261</created>
+      <changelist id="842f1f30-5306-42cb-bbaf-cb86e780eb0d" name="Default" comment="" />
+      <created>1502356526041</created>
       <option name="number" value="Default" />
-      <updated>1459330498261</updated>
-      <workItem from="1459330499396" duration="1547000" />
+      <option name="presentableId" value="Default" />
+      <updated>1502356526041</updated>
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1547000" />
-  </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2498615" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995737" sideWeight="0.5043478" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.49565217" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Job" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19936034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/learn/email.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="19" lean-forward="false" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/db.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/newdriver.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="68" column="25" lean-forward="true" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datawarehouse/dbsqldetail.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25081432">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="684">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/email.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="19" lean-forward="true" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/db.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/newdriver.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/email.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/newdriver.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/utils.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/email.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="91" lean-forward="true" selection-start-line="25" selection-start-column="91" selection-end-line="25" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/phantomjsdriver.log" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/forward/clojure-mail/1.0.7/clojure-mail-1.0.7.jar!/clojure_mail/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="116" column="6" lean-forward="true" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/utils.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="3702" column="10" lean-forward="false" selection-start-line="3702" selection-start-column="10" selection-end-line="3702" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grapdata/grap_engine.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-312">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grapdata/grap_protocols.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/learndriverweb.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/cps.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/learntimbre.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/task/common_task.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tools/phantom_graper.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/clj-webdriver/clj-webdriver/0.7.1/clj-webdriver-0.7.1.jar!/clj_webdriver/wait.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/clj-webdriver/clj-webdriver/0.7.1/clj-webdriver-0.7.1.jar!/clj_webdriver/taxi.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="681" column="43" lean-forward="false" selection-start-line="681" selection-start-column="43" selection-end-line="681" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/base+system+user+dev/repl-port">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/korma/korma/0.4.3/korma-0.4.3.jar!/korma/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="476" column="0" lean-forward="false" selection-start-line="476" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datawarehouse/coutchdetail.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datawarehouse/dbsqldetail.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/users.sql" />
+    <entry file="file://$PROJECT_DIR$/src/pingtai/main.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/layerware/hugsql-core/0.4.7/hugsql-core-0.4.7.jar!/hugsql/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1160">
+          <caret line="514" column="10" lean-forward="false" selection-start-line="514" selection-start-column="10" selection-end-line="514" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/name/female-names.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="4274" column="5" lean-forward="false" selection-start-line="4274" selection-start-column="5" selection-end-line="4274" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/name/male-names.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="1198" column="6" lean-forward="true" selection-start-line="1198" selection-start-column="6" selection-end-line="1198" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/name/names.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="1322" column="6" lean-forward="false" selection-start-line="1322" selection-start-column="6" selection-end-line="1322" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/email.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/newdriver.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/clutch.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phantomjsdriver.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/main.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sql/mail.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/name.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="732">
+          <caret line="102" column="12" lean-forward="false" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbconfig.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sql/users.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="52" column="2" lean-forward="true" selection-start-line="52" selection-start-column="2" selection-end-line="52" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/db.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/learn/facebook.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbconfig.example.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28314605">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

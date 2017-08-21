@@ -22,9 +22,10 @@
                  [org.seleniumhq.selenium/selenium-java "2.45.0"]
                  [com.taoensso/timbre "4.1.0"]
                  [io.forward/clojure-mail "1.0.7"]
-                 [korma "0.4.2"]
-                 [org.clojure/java.jdbc "0.3.7"]
+                 [korma "0.4.3"]
+                 [org.clojure/java.jdbc "0.7.0"]
                  [org.postgresql/postgresql "9.2-1002-jdbc4"]
+                 [com.layerware/hugsql "0.4.7"]
                  [mysql/mysql-connector-java "5.1.34"]
                  [me.raynes/fs "1.4.6"]]
   :main ^:skip-aot grapdata.core
