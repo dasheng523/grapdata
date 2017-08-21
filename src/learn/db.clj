@@ -17,10 +17,10 @@
 (defn create-email-tables
   "create email database tables"
   []
-  (mysql-create-domains-table email-db)
-  (mysql-create-forwardings-table email-db)
-  (mysql-create-users-table email-db)
-  (mysql-create-transport-table email-db))
+  (mysql-create-mail-domains-table email-db)
+  (mysql-create-mail-forwardings-table email-db)
+  (mysql-create-mail-users-table email-db)
+  (mysql-create-mail-transport-table email-db))
 
 
 (defn create-grap-tables

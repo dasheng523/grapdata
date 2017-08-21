@@ -56,14 +56,14 @@ values
 INSERT INTO users (email, password)
 VALUES (:email, ENCRYPT(:password));
 
--- :name mysql-create-domains-table :!
+-- :name mysql-create-mail-domains-table :!
 CREATE TABLE domains (domain varchar(50) NOT NULL, PRIMARY KEY (domain) );
 
--- :name mysql-create-forwardings-table :!
+-- :name mysql-create-mail-forwardings-table :!
 CREATE TABLE forwardings (source varchar(80) NOT NULL, destination TEXT NOT NULL, PRIMARY KEY (source) );
 
--- :name mysql-create-users-table :!
+-- :name mysql-create-mail-users-table :!
 CREATE TABLE users (email varchar(80) NOT NULL, password varchar(20) NOT NULL, PRIMARY KEY (email) );
 
--- :name mysql-create-transport-table :!
+-- :name mysql-create-mail-transport-table :!
 CREATE TABLE transport ( domain varchar(128) NOT NULL default '', transport varchar(128) NOT NULL default '', UNIQUE KEY domain (domain) );
