@@ -17,9 +17,7 @@ CREATE TABLE `users` (
 -- :doc Drop users table if exists
 drop table if exists users
 
--- :name mysql-get-all-users
--- :command :query
--- :result n
+-- :name mysql-get-all-users :? :*
 -- :doc Get all users info
 select
 --~ (if (seq (:cols params)) ":i*:cols" "*")
@@ -47,6 +45,9 @@ values
 (:v*:vals)
 
 
+-- :name mysql-clear-user :!
+delete from users
+where email != 'test@hyesheng.com'
 
 /*
 下面是mail数据库的内容

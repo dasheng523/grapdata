@@ -9,10 +9,22 @@
   [table data]
   (mysql-insert-table-data grap-db {:table table :cols (keys data) :vals (vals data)}))
 
+(defn get-all-users
+  []
+  (mysql-get-all-users grap-db))
+
+
 (defn insert-mail-user
   [email password]
   (mysql-insert-mail-user email-db {:email email :password password}))
 
+(defn clear-mail-users
+  []
+  (mysql-clear-user email-db))
+
+(defn clear-grap-users
+  []
+  (mysql-clear-user grap-db))
 
 (defn create-email-tables
   "create email database tables"

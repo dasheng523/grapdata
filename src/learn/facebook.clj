@@ -19,10 +19,18 @@
            "lastname" (-> name-generate :surnames first)
            "sex" (if (= :female (:gender name-generate)) 0 1)
            "enable" 1
-           "birthday" (str (+ (rand-int 15) 1987) "-" (format "%02d" (+ (rand-int 11) 1)) "-" (format "%02d" (+ (rand-int 27) 1)))})
-        (ldb/insert-mail-user
-          email
-          password)))))
+           "birthday" (str (+ (rand-int 15) 1985) "-" (format "%02d" (+ (rand-int 11) 1)) "-" (format "%02d" (+ (rand-int 27) 1)))})))))
 
-#_(create-grap-tables)
-(create-users 10 "ZZ")
+
+(defn create-mail-users
+  []
+  (let [users (ldb/get-all-users)]
+    (for [n users]
+      (ldb/insert-mail-user (:email n) (:password n)))))
+
+(defn process
+  []
+  (ldb/clear-grap-users)
+  (create-users 1000 "aa")
+  (ldb/clear-mail-users)
+  (create-mail-users))
