@@ -7,10 +7,10 @@
 (def emails (ref {}))
 
 (defn get-email
-  [address]
+  [address password]
   (let [email (find @emails address)]
     (if (nil? email)
-      (let [new-email (store "imap" "mail.hyesheng.com" address "a5235013")]
+      (let [new-email (store "imap" "mail.hyesheng.com" address password)]
         (dosync (alter emails assoc address new-email))
         new-email)
       email)))
@@ -21,14 +21,15 @@
     (dosync (alter emails dissoc emails k))
     (close-store v)))
 
+
 (defn get-facebook-email-code
   [email-store]
-  (let [latest-message (take 5 (all-messages email-store "inbox"))
-        facebook-message (utils/find-first #(str/index-of (message/subject %) "是你的 Facebook 验证码") latest-message)]
-    (-> facebook-message
+  (when-let [latest-message (take 5 (all-messages email-store "inbox"))]
+    (-> (utils/find-first #(str/index-of (message/subject %) "是你的 Facebook 验证码") latest-message)
         (message/subject)
         (str/split #" ")
         (first))))
+
 
 (defn get-facebook-confirm-email-url
   [email-store]

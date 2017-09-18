@@ -13,6 +13,9 @@
   []
   (mysql-get-all-users grap-db))
 
+(defn get-by-id
+  [table id]
+  (mysql-get-by-id grap-db {:table table :id id}))
 
 (defn insert-mail-user
   [email password]

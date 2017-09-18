@@ -24,6 +24,11 @@ select
 from users
 where enable=1
 
+-- :name mysql-get-by-id :? :1
+select
+--~ (if (seq (:cols params)) ":i*:cols" "*")
+from :i:table
+where id=:id
 
 -- :name mysql-update-by-id :! :n
 /* :require [clojure.string :as string]

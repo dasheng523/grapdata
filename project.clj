@@ -10,16 +10,15 @@
                                               com.sun.jdmk/jmxtools
                                               com.sun.jmx/jmxri]]
                  [clj-time "0.10.0"]
-                 [clj-http "2.0.0"]
+                 [clj-http "3.7.0"]
                  [com.ashafa/clutch "0.4.0"]
-                 [clj-webdriver "0.7.1"]
+                 [clj-webdriver "0.7.2"]
                  [com.codeborne/phantomjsdriver "1.2.1"
                   :exclusion [org.seleniumhq.selenium/selenium-java
                               org.seleniumhq.selenium/selenium-server
                               org.seleniumhq.selenium/selenium-remote-driver]]
                  [enlive "1.1.6"]
                  [com.novemberain/monger "3.0.0-rc2"]
-                 [org.seleniumhq.selenium/selenium-java "2.45.0"]
                  [com.taoensso/timbre "4.1.0"]
                  [io.forward/clojure-mail "1.0.7"]
                  [korma "0.4.3"]
@@ -27,7 +26,8 @@
                  [org.postgresql/postgresql "9.2-1002-jdbc4"]
                  [com.layerware/hugsql "0.4.7"]
                  [mysql/mysql-connector-java "5.1.34"]
-                 [me.raynes/fs "1.4.6"]]
+                 [me.raynes/fs "1.4.6"]
+                 [cheshire "5.8.0"]]
   :main ^:skip-aot grapdata.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

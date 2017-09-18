@@ -1,2 +1,54 @@
 [ERROR - 2017-08-12T04:28:22.555Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1502512102543
 [ERROR - 2017-08-12T04:28:54.678Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1502512134658
+[ERROR - 2017-09-12T10:57:20.250Z] RouterReqHand - _handle.error - {"errorStatusCode":23,"name":"NoSuchWindow","message":"{\"errorMessage\":\"Currently Window handle/name is invalid (closed?)\",\"request\":{\"headers\":{\"Accept-Encoding\":\"gzip,deflate\",\"Connection\":\"Keep-Alive\",\"Content-Length\":\"33\",\"Content-Type\":\"application/json; charset=utf-8\",\"Host\":\"localhost:3621\",\"User-Agent\":\"Apache-HttpClient/4.5.3 (Java/1.8.0_144)\"},\"httpVersion\":\"1.1\",\"method\":\"POST\",\"post\":\"{\\\"url\\\":\\\"http://www.facebook.com\\\"}\",\"url\":\"/url\",\"urlParsed\":{\"anchor\":\"\",\"query\":\"\",\"file\":\"url\",\"directory\":\"/\",\"path\":\"/url\",\"relative\":\"/url\",\"port\":\"\",\"host\":\"\",\"password\":\"\",\"user\":\"\",\"userInfo\":\"\",\"authority\":\"\",\"protocol\":\"\",\"source\":\"/url\",\"queryKey\":{},\"chunks\":[\"url\"]},\"urlOriginal\":\"/session/aa891560-97a8-11e7-8928-35cda61f790b/url\"}}","errorSessionId":"aa891560-97a8-11e7-8928-35cda61f790b","errorClassName":"org.openqa.selenium.NoSuchWindowException","errorScreenshot":"","line":182,"sourceURL":"phantomjs://code/request_handler.js","stack":"_getSessionWindow@phantomjs://code/request_handler.js:182:114\n_getSessionCurrWindow@phantomjs://code/request_handler.js:162:33\n_postUrlCommand@phantomjs://code/session_request_handler.js:485:64\n_handle@phantomjs://code/session_request_handler.js:91:32\n_reroute@phantomjs://code/request_handler.js:61:20\n_handle@phantomjs://code/router_request_handler.js:78:46"}
+[ERROR - 2017-09-13T03:57:19.152Z] Session [63f67950-9837-11e7-ad0d-499ba89da7ea] - page.onError - msg: VIDEOJS: ERROR: (CODE:4 MEDIA_ERR_SRC_NOT_SUPPORTED) 无法找到此视频兼容的源。 [object Object]
+[ERROR - 2017-09-13T03:57:19.162Z] Session [63f67950-9837-11e7-ad0d-499ba89da7ea] - page.onError - stack:
+  apply (:0)
+[ERROR - 2017-09-13T03:57:19.168Z] Session [63f67950-9837-11e7-ad0d-499ba89da7ea] - page.onError - msg: TypeError: undefined is not an object (evaluating 'this.tech_.one')
+[ERROR - 2017-09-13T03:57:19.168Z] Session [63f67950-9837-11e7-ad0d-499ba89da7ea] - page.onError - stack:
+  play (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:2)
+  (anonymous function) (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  (anonymous function) (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  forEach (:0)
+  (anonymous function) (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  r (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:2)
+[ERROR - 2017-09-13T03:57:19.172Z] Session [63f67950-9837-11e7-ad0d-499ba89da7ea] - page.onError - msg: VIDEOJS: ERROR: (CODE:4 MEDIA_ERR_SRC_NOT_SUPPORTED) 无法找到此视频兼容的源。 [object Object]
+[ERROR - 2017-09-13T03:57:19.172Z] Session [63f67950-9837-11e7-ad0d-499ba89da7ea] - page.onError - stack:
+  apply (:0)
+[INFO  - 2017-09-13T04:01:31.432Z] GhostDriver - Main - running on port 24123
+[INFO  - 2017-09-13T04:01:31.972Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0","webSecurityEnabled":true}
+[INFO  - 2017-09-13T04:01:31.972Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.customHeaders:  - {"Accept-Language":"zh-CN","Connection":"keep-alive"}
+[INFO  - 2017-09-13T04:01:31.972Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0","phantomjs.page.customHeaders.Connection":"keep-alive","phantomjs.page.customHeaders.Accept-Language":"zh-CN"}
+[INFO  - 2017-09-13T04:01:31.973Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 3a2c1ed0-9838-11e7-920d-d97de4d2a582
+[ERROR - 2017-09-13T04:01:44.937Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - msg: VIDEOJS: ERROR: (CODE:4 MEDIA_ERR_SRC_NOT_SUPPORTED) 无法找到此视频兼容的源。 [object Object]
+[ERROR - 2017-09-13T04:01:44.938Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - stack:
+  apply (:0)
+[ERROR - 2017-09-13T04:01:44.947Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - msg: TypeError: undefined is not an object (evaluating 'this.tech_.one')
+[ERROR - 2017-09-13T04:01:44.947Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - stack:
+  play (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:2)
+  (anonymous function) (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  (anonymous function) (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  forEach (:0)
+  (anonymous function) (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  r (https://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:2)
+[ERROR - 2017-09-13T04:01:44.955Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - msg: VIDEOJS: ERROR: (CODE:4 MEDIA_ERR_SRC_NOT_SUPPORTED) 无法找到此视频兼容的源。 [object Object]
+[ERROR - 2017-09-13T04:01:44.955Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - stack:
+  apply (:0)
+[ERROR - 2017-09-13T04:03:14.632Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - msg: VIDEOJS: ERROR: (CODE:4 MEDIA_ERR_SRC_NOT_SUPPORTED) 无法找到此视频兼容的源。 [object Object]
+[ERROR - 2017-09-13T04:03:14.633Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - stack:
+  apply (:0)
+[ERROR - 2017-09-13T04:03:14.639Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - msg: TypeError: undefined is not an object (evaluating 'this.tech_.one')
+[ERROR - 2017-09-13T04:03:14.640Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - stack:
+  play (http://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:2)
+  (anonymous function) (http://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  (anonymous function) (http://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  forEach (:0)
+  (anonymous function) (http://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:1)
+  r (http://s3a.pstatp.com/toutiao/video_player/dist/tt-video.js:2)
+[ERROR - 2017-09-13T04:03:14.644Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - msg: VIDEOJS: ERROR: (CODE:4 MEDIA_ERR_SRC_NOT_SUPPORTED) 无法找到此视频兼容的源。 [object Object]
+[ERROR - 2017-09-13T04:03:14.644Z] Session [3a2c1ed0-9838-11e7-920d-d97de4d2a582] - page.onError - stack:
+  apply (:0)
+[INFO  - 2017-09-13T04:06:31.416Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-09-13T04:11:31.427Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2017-09-13T04:11:31.428Z] SessionManagerReqHand - _cleanupWindowlessSessions - Deleted Session '3a2c1ed0-9838-11e7-920d-d97de4d2a582', because windowless
+[ERROR - 2017-09-13T04:25:37.456Z] RouterReqHand - _handle.error - {"name":"Variable Resource Not Found","message":"{\"headers\":{\"Accept-Encoding\":\"gzip,deflate\",\"Cache-Control\":\"no-cache\",\"Connection\":\"Keep-Alive\",\"Host\":\"localhost:24123\",\"User-Agent\":\"Apache-HttpClient/4.5.3 (Java/1.8.0_144)\"},\"httpVersion\":\"1.1\",\"method\":\"GET\",\"url\":\"/session/3a2c1ed0-9838-11e7-920d-d97de4d2a582/window_handles\",\"urlParsed\":{\"anchor\":\"\",\"query\":\"\",\"file\":\"window_handles\",\"directory\":\"/session/3a2c1ed0-9838-11e7-920d-d97de4d2a582/\",\"path\":\"/session/3a2c1ed0-9838-11e7-920d-d97de4d2a582/window_handles\",\"relative\":\"/session/3a2c1ed0-9838-11e7-920d-d97de4d2a582/window_handles\",\"port\":\"\",\"host\":\"\",\"password\":\"\",\"user\":\"\",\"userInfo\":\"\",\"authority\":\"\",\"protocol\":\"\",\"source\":\"/session/3a2c1ed0-9838-11e7-920d-d97de4d2a582/window_handles\",\"queryKey\":{},\"chunks\":[\"session\",\"3a2c1ed0-9838-11e7-920d-d97de4d2a582\",\"window_handles\"]}}","line":80,"sourceURL":"phantomjs://code/router_request_handler.js","stack":"_handle@phantomjs://code/router_request_handler.js:80:82"}

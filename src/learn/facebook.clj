@@ -1,6 +1,9 @@
 (ns learn.facebook
   (:require [learn.db :as ldb]
-            [learn.name :as lname]))
+            [learn.name :as lname]
+            [learn.email :as email]
+            [learn.newdriver :as driver]
+            [clojure.string :as str]))
 
 
 (defn create-users
@@ -28,9 +31,17 @@
     (for [n users]
       (ldb/insert-mail-user (:email n) (:password n)))))
 
-(defn process
+(defn process-data
   []
   (ldb/clear-grap-users)
-  (create-users 1000 "aa")
+  (create-users 100 "aa")
   (ldb/clear-mail-users)
   (create-mail-users))
+
+(defn test-email
+  []
+  (let [mail (email/get-email "aa00018@hyesheng.com" "PW,p00018")]
+    (email/get-facebook-confirm-email-url mail)
+    (email/close-all-email)))
+
+
