@@ -3,7 +3,7 @@
 
 
 ;抓取最外层接口
-(defprotocol GrapInterface
+#_(defprotocol GrapInterface
   (start [])
   (stop [])
   (save [])

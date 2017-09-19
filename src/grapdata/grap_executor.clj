@@ -1,7 +1,7 @@
 (ns grapdata.grap-executor
   (:require [clojure.core.async :as async]
             [taoensso.timbre :as timbre]
-            [datawarehouse.mongodetail]))
+            #_[datawarehouse.mongodetail]))
 
 
 ;创建任务执行器
@@ -44,7 +44,7 @@
   actuator)
 
 ;任务执行器状态持久化
-(defn save-task-actuator [{:keys [need-fetch-urls fail-fetch-urls]} task-id]
+#_(defn save-task-actuator [{:keys [need-fetch-urls fail-fetch-urls]} task-id]
   (async/go-loop []
     (when-let [link (async/<! need-fetch-urls)]
       (datawarehouse.mongodetail/insert-needto-url task-id link)
@@ -53,7 +53,7 @@
     ((datawarehouse.mongodetail/insert-invail-url task-id link))))
 
 ;恢复任务执行器状态
-(defn recover-task-actuator [actuator task-id]
+#_(defn recover-task-actuator [actuator task-id]
   (let [need-fetch-urls
         (async/to-chan
           (datawarehouse.mongodetail/find-and-remove-needto-urls task-id))

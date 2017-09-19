@@ -48,12 +48,12 @@
 
 
 (System/setProperty "webdriver.chrome.driver" "d:\\chromedriver.exe")
-(def cdriver (init-driver {:webdriver
+#_(def cdriver (init-driver {:webdriver
                            (ChromeDriver.
                              (doto (DesiredCapabilities/chrome)
                                (.setCapability "proxy" (doto (Proxy.)
                                                          (.setHttpProxy "http://183.135.249.198:35150")))))}))
-(to cdriver "https://www.baidu.com")
+#_(to cdriver "https://www.baidu.com")
 
 (defn- get-pic-code [url]
   (spit "d:\\test.txt" url)

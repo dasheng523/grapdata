@@ -3,7 +3,7 @@
             [clj-http.client :as http :only [get]]
             [net.cgrand.enlive-html :as enlive :only [select]]
             [taoensso.timbre :as timbre]
-            [datawarehouse.mongodetail :as mongodetail])
+            #_[datawarehouse.mongodetail :as mongodetail])
   (:import (java.io StringReader)))
 
 ;速度
@@ -32,7 +32,7 @@
 
 
 ;生成具体的抓取引擎
-(defn engine-generator [fn-page-type next-nodes task-id detail-handle]
+#_(defn engine-generator [fn-page-type next-nodes task-id detail-handle]
   {:error-handler                                         ;错误处理器
    (fn [url]
      (mongodetail/insert-invail-url task-id url)

@@ -3,7 +3,7 @@
             [taoensso.timbre :as timbre]
             [net.cgrand.enlive-html :as enlive :only [select]]
             [grapdata.grap-executor]
-            [datawarehouse.dbsqldetail :as sql])
+            #_[datawarehouse.dbsqldetail :as sql])
   (:use [clojure.string :only [trim join]]))
 
 (defn defalt-task []
@@ -17,7 +17,7 @@
       "list"
       (.contains redir "www.15fen.com/goods.php")
       "detail"
-      :else (throw (Exception. "Òì³£ÄÚÈÝ")))))
+      :else (throw (Exception. "ï¿½ì³£ï¿½ï¿½ï¿½ï¿½")))))
 
 (defn- get-html-text
   ([html pathset sp]
@@ -29,7 +29,7 @@
   [html selectset attr]
   (map (fn [data] (-> data :attrs attr)) (enlive/select html selectset)))
 
-(defn- handlehtml [html]
+#_(defn- handlehtml [html]
   (sql/insert-vegetable-data {:price (Float/parseFloat (.substring (get-html-text html #{:b.bt_infos_price}) 1))
                               :name (get-html-text html #{:h1.bt_title})
                               :place (get-html-text html #{:ul.bt_price_list})
@@ -40,7 +40,7 @@
 
 
 
-(defn defalt-engine []
+#_(defn defalt-engine []
   (engine/engine-generator
     page-type
     #{[:dt.pro_list_pic :> :a] [:a.page_next]}
@@ -48,15 +48,15 @@
     handlehtml))
 
 
-(def engine (defalt-engine))
-(def task-executor (grapdata.grap-executor/send-task
+#_(def engine (defalt-engine))
+#_(def task-executor (grapdata.grap-executor/send-task
                    (grapdata.grap-executor/create-task-actuator engine)
                    "http://www.15fen.com/category.php?id=1"))
 
-(defn run []
+#_(defn run []
   (grapdata.grap-executor/start-task-actuator task-executor))
 
-(defn stop []
+#_(defn stop []
   (grapdata.grap-executor/stop-task-actuator task-executor))
 
 

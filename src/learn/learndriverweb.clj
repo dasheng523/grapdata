@@ -34,7 +34,7 @@
   )
 
 
-(testrun)
+#_(testrun)
 
 ;(def driver (new-driver {:browser :chrome}))
 ;(set-driver! driver)
