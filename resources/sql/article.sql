@@ -18,16 +18,46 @@ insert into :i:table
 values
 (:v*:vals)
 
+
+-- :name update-data-by-id :i! :n
+/* :require [clojure.string :as string]
+            [hugsql.parameters :refer [identifier-param-quote]] */
+update :i:table set
+/*~
+(string/join ","
+  (for [[field _] (:updates params)]
+    (str (identifier-param-quote (name field) options)
+        " = :v:updates." (name field))))
+~*/
+where id = :id
+
+
 -- :name insert-table-tuple :! :n
 -- :doc Insert multiple characters with :tuple* parameter type
 insert into :i:table
 (:i*:cols)
 values :tuple*:datas
 
+-- :name delete-table-data-by-url :i!
+delete from :i:table
+where url in (:v*:urls)
+
 -- :name select-all :? :*
 -- :doc select all data from given table
 select *
 from :i:table
+
+-- :name get-by-url :? :1
+-- :doc get-by-url
+select *
+from :i:table
+where `url`=:url
+
+-- :name get-by-id :? :1
+-- :doc get-by-id
+select *
+from :i:table
+where `id`=:id
 
 -- :name select-article-by-url :? :1
 -- :doc select source_article by url
@@ -57,6 +87,7 @@ limit 1
 select *
 from source_article
 where `id`=:id
+
 
 -- :name get-all-needfetch :? :*
 -- :doc get all needfetch data

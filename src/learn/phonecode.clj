@@ -34,7 +34,7 @@
                      "&phone=" phone
                      "&token=" token)))
 
-(defn test []
+(defn test-phonecode []
   (login "dasheng523" "a5235013")
   (get-phone "d67e492ea08d6f72d15bf2487efc5db2" 9729)
   (get-code "13690754024" "d67e492ea08d6f72d15bf2487efc5db2" 9729))
