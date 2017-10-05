@@ -33,8 +33,7 @@
 
   )
 
-
-#_(testrun)
+(println "1111")
 
 ;(def driver (new-driver {:browser :chrome}))
 ;(set-driver! driver)
