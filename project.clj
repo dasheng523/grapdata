@@ -9,6 +9,7 @@
 
                  [clj-time "0.10.0"]
                  [clj-http "3.7.0"]
+                 [dk.ative/docjure "1.11.0"]
                  [com.ashafa/clutch "0.4.0"]
                  [clj-webdriver "0.7.2"]
                  [com.codeborne/phantomjsdriver "1.2.1"

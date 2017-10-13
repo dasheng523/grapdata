@@ -54,11 +54,9 @@
               "www.ecigcommunity.com"
               "www.ecigblog.in"
               "www.vapingblog.in"
-              "www.vaping10.com"
-              "www.vapinggift.com"])
+              "www.vaping10.com"])
 
 (defn do-push []
   (doseq [domain domains]
     (patch-push-article domain 10)))
-
 

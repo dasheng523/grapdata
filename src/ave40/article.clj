@@ -6,6 +6,15 @@
             [clojure.walk :as w])
   (:import (java.io StringReader)))
 
+(defn- export-to-cvs
+  [list]
+  (spit "d:/sss.csv"
+        (str/join "\n"
+                  (map (fn [n]
+                         (str/join "," (map (fn [[k v]] (str "\"" v "\"")) n)))
+                       list))))
+
+
 
 
 (defn create-parser [selectors]

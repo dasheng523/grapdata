@@ -1,13 +1,13 @@
 (ns ave40.grap-article
-  (:require [clj-http.client :as http]
-            [clojure.string :as str]
-            [ave40.db :refer :all]
-            [ave40.utils :refer :all]
-            [net.cgrand.enlive-html :as enlive]
-            [clojure.tools.logging :as log]
-            [clojure.walk :as w]
-            [clojure.data])
-  (:import (java.io StringReader)))
+                  (:require [clj-http.client :as http]
+                            [clojure.string :as str]
+                            [ave40.db :refer :all]
+                            [ave40.utils :refer :all]
+                            [net.cgrand.enlive-html :as enlive]
+                            [clojure.tools.logging :as log]
+                            [clojure.walk :as w]
+                            [clojure.data])
+                  (:import (java.io StringReader)))
 
 
 (def unvisited-urls (ref []))
@@ -173,13 +173,16 @@
                      (enlive/select selector)
                      ((fn [a-nodes] (map #(-> % :attrs :href) a-nodes))))]
         (doseq [url urls]
+          (println url)
           (let [html (-> url
                          (http/get)
                          :body)]
-            (dosync (add-source-html url html))))))))
+            (data-insert!
+              "source_article"
+              {"url" url "html" html "created_at" (quot (System/currentTimeMillis) 1000)})))))))
 
 (defn do-simple-grap []
   (let [grapper (simple-grapper
-                  [:div.td-module-thumb :a]
-                  #(str "https://www.vapingpost.com/page/" %))]
-    (grapper 2 131)))
+                  [:header.entry-header :h2.entry-title :a]
+                  #(str "http://www.vaporvanity.com/category/news/page/" %))]
+    (grapper 1 66)))

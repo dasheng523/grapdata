@@ -87,8 +87,8 @@
 (defn simple-run-spinner []
   (let [articles (select-all article-db {:table "articles" :where "isnull(spinner_title)"})
         spinner (create-spinner)]
-    (try
-      (doseq [article articles]
+    (doseq [article articles]
+      (try
         (let [title (spinner (:title article))
               pies (str/split (:article article) #"\n")
               content (str/join "\n" (for [p pies] (if p (spinner p))))]
@@ -97,7 +97,7 @@
             article-db
             {:table "articles"
              :updates {:spinner_title title :spinner_article content}
-             :where (str "id=" (:id article))})))
-      (catch Exception e
-        (log/error e)))))
+             :where (str "id=" (:id article))}))
+        (catch Exception e
+          (log/error e))))))
 
