@@ -19,7 +19,7 @@ values
 (:v*:vals)
 
 
--- :name update-data-by-id :i! :n
+-- :name update-data :i! :n
 /* :require [clojure.string :as string]
             [hugsql.parameters :refer [identifier-param-quote]] */
 update :i:table set
@@ -29,7 +29,10 @@ update :i:table set
     (str (identifier-param-quote (name field) options)
         " = :v:updates." (name field))))
 ~*/
-where id = :id
+/*~
+(if (:where params)
+  (str "where " (:where params)))
+~*/
 
 
 -- :name insert-table-tuple :! :n
@@ -44,8 +47,15 @@ where url in (:v*:urls)
 
 -- :name select-all :? :*
 -- :doc select all data from given table
-select *
+/* :require [clojure.string :as string]
+            [hugsql.parameters :refer [identifier-param-quote]] */
+select
+--~ (if (seq (:cols params)) ":i*:cols" "*")
 from :i:table
+/*~
+(if (:where params)
+  (str "where " (:where params)))
+~*/
 
 -- :name get-by-url :? :1
 -- :doc get-by-url
@@ -110,3 +120,21 @@ WHERE html like '%entry-header overlay%';
 select *
 from article
 where `url` = :url
+
+
+-- :name select-article2-limit-10
+-- :doc xxxx
+select *
+from article2
+limit 2
+
+
+-- :name select-article2-by-spinner-null
+-- :doc get article by spinner-null
+select *
+from article2
+where ISNULL(spinner_article)
+
+-- :name select-rand-image :? :1
+-- :doc select-rand-image
+SELECT * FROM image ORDER BY RAND() LIMIT 1;

@@ -5,10 +5,8 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [log4j "1.2.15" :exclusions [javax.mail/mail
-                                              javax.jms/jms
-                                              com.sun.jdmk/jmxtools
-                                              com.sun.jmx/jmxri]]
+                 [org.clojure/tools.logging "0.4.0"]
+
                  [clj-time "0.10.0"]
                  [clj-http "3.7.0"]
                  [com.ashafa/clutch "0.4.0"]
@@ -30,6 +28,7 @@
                  [cheshire "5.8.0"]]
   :main ^:skip-aot grapdata.core
   :target-path "target/%s"
+  :jvm-opts ["-Xmx2G"]
   :profiles {:uberjar {:aot :all}})
 
 
