@@ -1,4 +1,4 @@
-(ns ave40.db
+(ns grapdata.ave40.db
   (:require [hugsql.core :as hugsql]))
 
 

@@ -1,8 +1,8 @@
-(ns ave40.spinner
+(ns grapdata.ave40.spinner
   (:require [clj-http.client :as http]
             [clojure.string :as str]
             [clojure.tools.logging :as log]
-            [ave40.db :refer :all]))
+            [grapdata.ave40.db :refer :all]))
 
 (defn- split-content-len [content maxlen]
   (reduce (fn [v sen]

@@ -1,5 +1,5 @@
-(ns ave40.manager
-  (:require [ave40.db :refer :all]
+(ns grapdata.ave40.manager
+  (:require [grapdata.ave40.db :refer :all]
             [clojure.tools.logging :as log]
             [clojure.string :as string]))
 

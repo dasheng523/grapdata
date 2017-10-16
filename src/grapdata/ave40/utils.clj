@@ -1,4 +1,4 @@
-(ns ave40.utils
+(ns grapdata.ave40.utils
   (:require [net.cgrand.enlive-html :as enlive]
             [clojure.string :as str]))
 

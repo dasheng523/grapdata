@@ -1,6 +1,6 @@
-(ns ave40.article
+(ns grapdata.ave40.article
   (:require [clj-http.client :as http]
-            [ave40.db :refer :all]
+            [grapdata.ave40.db :refer :all]
             [clojure.string :as str]
             [net.cgrand.enlive-html :as enlive]
             [clojure.walk :as w])
@@ -13,8 +13,6 @@
                   (map (fn [n]
                          (str/join "," (map (fn [[k v]] (str "\"" v "\"")) n)))
                        list))))
-
-
 
 
 (defn create-parser [selectors]
@@ -42,11 +40,13 @@
         parser (create-parser selector)]
     (println (str "total:" (count source-list)))
     (doseq [source source-list]
-      (data-insert! "articles"
-                    (w/stringify-keys
-                      (merge (parser (:html source))
-                             {:source_url (:url source)
-                              :grap_time (:created_at source)}))))))
+      (when (empty? (select-all article-db {:table "articles" :where (str "source_url='" (:url source) "'")}))
+        (println (:url source))
+        (data-insert! "articles"
+                      (w/stringify-keys
+                        (merge (parser (:html source))
+                               {:source_url (:url source)
+                                :grap_time (:created_at source)})))))))
 
 
 
@@ -59,5 +59,4 @@
                     :selector {:title [:header.td-post-title :h1.entry-title]
                                :article [:div.vc_column-inner]}
                     :cond "html like '%entry-title%' and html like '%td-post-content%'"})
-
 

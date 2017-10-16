@@ -1,7 +1,7 @@
-(ns ave40.grap-image
+(ns grapdata.ave40.grap-image
   (:require [clj-http.client :as http]
             [clojure.string :as str]
-            [ave40.db :refer :all]
+            [grapdata.ave40.db :refer :all]
             [net.cgrand.enlive-html :as enlive])
   (:import (java.io StringReader)))
 

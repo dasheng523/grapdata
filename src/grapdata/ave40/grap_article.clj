@@ -1,8 +1,8 @@
-(ns ave40.grap-article
+(ns grapdata.ave40.grap-article
                   (:require [clj-http.client :as http]
                             [clojure.string :as str]
-                            [ave40.db :refer :all]
-                            [ave40.utils :refer :all]
+                            [grapdata.ave40.db :refer :all]
+                            [grapdata.ave40.utils :refer :all]
                             [net.cgrand.enlive-html :as enlive]
                             [clojure.tools.logging :as log]
                             [clojure.walk :as w]
@@ -164,7 +164,7 @@
 ;; 简易版本抓取
 (defn simple-grapper [selector next-page-url-generator]
   (fn [start-page end-page]
-    (for [page (range start-page end-page)]
+    (doseq [page (range start-page end-page)]
       (let [source-url (next-page-url-generator page)
             urls (-> (http/get source-url)
                      :body
@@ -174,12 +174,13 @@
                      ((fn [a-nodes] (map #(-> % :attrs :href) a-nodes))))]
         (doseq [url urls]
           (println url)
-          (let [html (-> url
-                         (http/get)
-                         :body)]
-            (data-insert!
-              "source_article"
-              {"url" url "html" html "created_at" (quot (System/currentTimeMillis) 1000)})))))))
+          (if (empty? (select-all article-db {:table "source_article" :where (str "url='" url "'")}))
+            (let [html (-> url
+                           (http/get)
+                           :body)]
+              (data-insert!
+                "source_article"
+                {"url" url "html" html "created_at" (quot (System/currentTimeMillis) 1000)}))))))))
 
 (defn do-simple-grap []
   (let [grapper (simple-grapper

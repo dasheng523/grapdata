@@ -1,6 +1,6 @@
-(ns ave40.push
+(ns grapdata.ave40.push
   (:require [clj-http.client :as http]
-            [ave40.db :refer :all]
+            [grapdata.ave40.db :refer :all]
             [clojure.string :as str]
             [net.cgrand.enlive-html :as enlive]
             [clojure.walk :as w]
