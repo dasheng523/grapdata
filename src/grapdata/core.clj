@@ -8,7 +8,7 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (sp/simple-run-spinner))
+  (sp/simple-run-spinner-task))
 
 #_(let [inp (read-line)]
   (case inp

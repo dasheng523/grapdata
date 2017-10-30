@@ -57,6 +57,16 @@ from :i:table
   (str "where " (:where params)))
 ~*/
 
+-- :name select-one :? :1
+-- :doc select one record
+select
+--~ (if (seq (:cols params)) ":i*:cols" "*")
+from :i:table
+/*~
+(if (:where params)
+  (str "where " (:where params)))
+~*/
+
 -- :name get-by-url :? :1
 -- :doc get-by-url
 select *
@@ -135,6 +145,8 @@ select *
 from article2
 where ISNULL(spinner_article)
 
--- :name select-rand-image :? :1
+-- :name select-rand-image :? :*
 -- :doc select-rand-image
-SELECT * FROM image ORDER BY RAND() LIMIT 1;
+SELECT * FROM image
+where not ISNULL(url) and `tag` = :tag
+ORDER BY RAND() LIMIT 3;

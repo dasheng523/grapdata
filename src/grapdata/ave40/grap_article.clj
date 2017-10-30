@@ -1,12 +1,13 @@
 (ns grapdata.ave40.grap-article
-                  (:require [clj-http.client :as http]
-                            [clojure.string :as str]
-                            [grapdata.ave40.db :refer :all]
-                            [grapdata.ave40.utils :refer :all]
-                            [net.cgrand.enlive-html :as enlive]
-                            [clojure.tools.logging :as log]
-                            [clojure.walk :as w]
-                            [clojure.data])
+  (:require [clj-http.client :as http]
+            [clojure.string :as str]
+            [grapdata.ave40.db :refer :all]
+            [grapdata.ave40.utils :refer :all]
+            [net.cgrand.enlive-html :as enlive]
+            [clojure.tools.logging :as log]
+            [clojure.walk :as w]
+            [clojure.data]
+            [clojure.data.json :as json])
                   (:import (java.io StringReader)))
 
 
@@ -160,6 +161,16 @@
   (dosync (add-unvisited url))
   (do-grap))
 
+(defn create-default-selector [select-path domain]
+  (fn [resp] (-> resp
+                 (StringReader.)
+                 (enlive/html-resource)
+                 (enlive/select select-path)
+                 (->> (map (fn [node]
+                             (if domain
+                               (str domain (-> node :attrs :href))
+                               (-> node :attrs :href))))))))
+
 
 ;; 简易版本抓取
 (defn simple-grapper [selector next-page-url-generator]
@@ -168,16 +179,11 @@
       (let [source-url (next-page-url-generator page)
             urls (-> (http/get source-url)
                      :body
-                     (StringReader.)
-                     (enlive/html-resource)
-                     (enlive/select selector)
-                     ((fn [a-nodes] (map #(-> % :attrs :href) a-nodes))))]
+                     (selector))]
         (doseq [url urls]
           (println url)
           (if (empty? (select-all article-db {:table "source_article" :where (str "url='" url "'")}))
-            (let [html (-> url
-                           (http/get)
-                           :body)]
+            (let [html (-> url (http/get) :body)]
               (data-insert!
                 "source_article"
                 {"url" url "html" html "created_at" (quot (System/currentTimeMillis) 1000)}))))))))
@@ -187,3 +193,17 @@
                   [:header.entry-header :h2.entry-title :a]
                   #(str "http://www.vaporvanity.com/category/news/page/" %))]
     (grapper 1 66)))
+
+
+(defn grap-vogue []
+  "抓取http://www.vogue.co.uk"
+  (let [grapper (simple-grapper
+                  (fn [resp] (-> resp
+                                 (json/read-str)
+                                 (get-in ["data" "template"])
+                                 (StringReader.)
+                                 (enlive/html-resource)
+                                 (enlive/select [:article.c-card :a.c-card__link])
+                                 ((fn [a-nodes] (map (fn [node] (str "http://www.vogue.co.uk" (-> node :attrs :href))) a-nodes)))))
+                  #(str "http://www.vogue.co.uk/xhr/topic/news?page=" % "&shift=0&list_counter=3"))]
+    (grapper 1 1921)))

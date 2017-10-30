@@ -17,3 +17,8 @@
 (defn data-insert!
   [table data]
   (insert-table-data article-db {:table table :cols (keys data) :vals (vals data)}))
+
+
+(defn get-domain-tag [domain]
+  (-> (select-one article-db {:table "source_site" :cols ["tag"] :where (str "domain='" domain "'")})
+      :tag))

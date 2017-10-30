@@ -2,15 +2,21 @@
   (:require [clj-http.client :as http]
             [clojure.string :as str]
             [clojure.tools.logging :as log]
+            [opennlp.nlp :as nlp]
             [grapdata.ave40.db :refer :all]))
 
-(defn- split-content-len [content maxlen]
+(def get-sentences (nlp/make-sentence-detector "resources/language_model/en-sent.bin"))
+
+(defn- split-content-len [content maxlen hold-word]
   (reduce (fn [v sen]
             (let [last-sen (last v)
-                  add-sen (str last-sen "\n" sen)]
-              (if (< (count add-sen) maxlen) (conj (vec (drop-last v)) add-sen) (conj v sen))))
+                  add-sen (str last-sen sen)]
+              (if (< (count add-sen) maxlen)
+                (conj (vec (drop-last v)) add-sen)
+                (conj v sen))))
           []
-          (str/split content #"\n")))
+          (get-sentences (str/replace content #"\n" hold-word))))
+
 
 
 (defn- spinner-login []
@@ -62,42 +68,39 @@
   (let [session (spinner-login)]
     (partial spinner-parse session)))
 
-(defn- handle-and-save [article spinner]
-  (let [title (spinner (:title article))
-        pies (str/split (:article article) #"\n")
-        content (str/join "\n" (for [p pies] (if p (spinner p))))]
-    (println (:title article))
-    (update-data
-      article-db
-      {:table "articles"
-       :updates {:spinner_title title :spinner_article content}
-       :where (str "id=" (:id article))})))
+(defn spin-and-save-one-article [spinner article]
+  (try
+    (let [title (spinner (:title article))
+          pies (split-content-len(:article article) 3000 "-----")
+          content (-> pies
+                      (->> (map (fn [p] (if p (spinner p)))))
+                      (->> (str/join ""))
+                      (str/replace #"-----" "\n"))]
+      (println (:title article))
+      (update-data
+        article-db
+        {:table "articles"
+         :updates {:spinner_title title :spinner_article content}
+         :where (str "id=" (:id article))}))
+    (catch Exception e
+      (log/error e))))
 
-(defn- handle-list-and-save [list spinner]
-  (doseq [info list]
-    (handle-and-save info spinner)))
-
-(defn muti-run-spinner [n]
-  (let [articles (select-all article-db {:table "articles" :where "isnull(spinner_title)"})
-        pies (partition (quot (count articles) n) articles)
-        spinner (create-spinner)]
-    (doseq [pie pies]
-      (future (handle-list-and-save pie spinner)))))
-
-(defn simple-run-spinner []
-  (let [articles (select-all article-db {:table "articles" :where "isnull(spinner_title)"})
-        spinner (create-spinner)]
+(defn spin-and-save-articles [articles]
+  (let [spinner (create-spinner)]
     (doseq [article articles]
-      (try
-        (let [title (spinner (:title article))
-              pies (str/split (:article article) #"\n")
-              content (str/join "\n" (for [p pies] (if p (spinner p))))]
-          (println (:title article))
-          (update-data
-            article-db
-            {:table "articles"
-             :updates {:spinner_title title :spinner_article content}
-             :where (str "id=" (:id article))}))
-        (catch Exception e
-          (log/error e))))))
+      (spin-and-save-one-article spinner article))))
 
+(defn simple-run-spinner-task []
+  (spin-and-save-articles
+    (select-all article-db
+                {:table "articles" :where (str "isnull(spinner_title) and not isnull(article) and article <> '' and "
+                                               "source_url like 'http://www.autoexpress.co.uk%' "
+                                               "limit 20")}))
+  (spin-and-save-articles
+    (select-all article-db
+                {:table "articles" :where (str "isnull(spinner_title) and article <> '' and "
+                                               "source_url like 'http://www.vogue.co.uk%' "
+                                               "limit 20")}))
+  (spin-and-save-articles
+    (select-all article-db
+                {:table "articles" :where "isnull(spinner_title) and article <> ''"})))

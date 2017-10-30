@@ -8,8 +8,10 @@
                  [org.clojure/tools.logging "0.4.0"]
 
                  [clj-time "0.10.0"]
+                 [org.clojure/data.json "0.2.6"]
                  [clj-http "3.7.0"]
                  [dk.ative/docjure "1.11.0"]
+                 [clojure-opennlp "0.4.0"]                  ;处理自然语言
                  [com.ashafa/clutch "0.4.0"]
                  [clj-webdriver "0.7.2"]
                  [com.codeborne/phantomjsdriver "1.2.1"
