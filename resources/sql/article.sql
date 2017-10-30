@@ -148,5 +148,5 @@ where ISNULL(spinner_article)
 -- :name select-rand-image :? :*
 -- :doc select-rand-image
 SELECT * FROM image
-where not ISNULL(url) and `tag` = :tag
+where `tag` = :tag and not ISNULL(url)
 ORDER BY RAND() LIMIT 3;

@@ -31,6 +31,11 @@
         (->> (remove nil?))
         (->> (str/join "\n")))))
 
+#_(add-image-to-article
+  (:spinner_article (select-one article-db {:table "articles" :where "id=1184"}))
+  (-> (select-rand-image article-db {:tag "fashion"})
+      (->> (map :url))))
+
 
 (defn- wrap-paragraph [text]
   "包裹段落"
@@ -46,16 +51,16 @@
                         (#(str "(" % ")")))
         article-list (select-all article-db
                       {:table "articles"
-                       :cols  ["id" "spinner_title" "spinner_article"]
+                       :cols  ["id" "spinner_title" "spinner_article" "extra" "source_url"]
                        :where (str limit-where " and ISNULL(post_domain) and not isnull(spinner_title) and not isnull(spinner_article) and spinner_article<>'' limit " amount)})]
     (doseq [article-info article-list]
       (let [extra (-> article-info :extra)
-            image-urls (if extra
+            image-urls (if (and extra (not= "" extra))
                    (-> extra
                        (json/parse-string true)
                        :images
                        (->> (map #(-> (select-one article-db {:table "image" :where (str "id=" %)}) :url))))
-                   (-> (select-rand-image article-db {:tag (get-domain-tag (utils/get-domain (:source_url article-info)))})
+                   (-> (select-rand-image article-db {:tag tag})
                        (->> (map :url))))]
         (push-article domain {:title (:spinner_title article-info)
                               :article (add-image-to-article (:spinner_article article-info) image-urls)})
@@ -63,6 +68,7 @@
                                  :updates {:post_time (quot (System/currentTimeMillis) 1000)
                                            :post_domain domain}
                                  :where (str "id=" (:id article-info))})))))
+
 
 
 (def domains [{:domain "www.vapinggift.com" :tag "vape" :amount 2}
