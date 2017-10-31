@@ -69,9 +69,8 @@
                                            :post_domain domain}
                                  :where (str "id=" (:id article-info))})))))
 
-
-
 (def domains [{:domain "www.vapinggift.com" :tag "vape" :amount 2}
+              {:domain "www.ecigview.com" :tag "vape" :amount 5}
               {:domain "www.eciggadget.com" :tag "vape" :amount 2}
               {:domain "www.ecigsmok.com" :tag "vape" :amount 2}
               {:domain "www.vapingblog.net" :tag "vape" :amount 2}
@@ -81,11 +80,12 @@
               {:domain "www.ecigblog.in" :tag "vape" :amount 2}
               {:domain "www.vapingblog.in" :tag "vape" :amount 2}
               {:domain "www.vaping10.com" :tag "vape" :amount 2}
-              {:domain "www.betalily.com" :tag "fashion" :amount 10}
-              {:domain "www.scan2car.com" :tag "car" :amount 10}])
+              {:domain "www.betalily.com" :tag "fashion" :amount 5}
+              {:domain "www.scan2car.com" :tag "car" :amount 5}])
 
 (defn do-push []
   (doseq [{:keys [domain tag amount]} domains]
     (patch-push-article domain amount tag)))
 
 #_(do-push)
+#_(patch-push-article "www.ecigview.com" 5 "vape")

@@ -17,9 +17,13 @@
 
 #_(parse-excel-data (select-all article-db {:table "cms_block" :cols ["block_id" "title" "content"]}))
 
-(defn save-to-excel [data]
-  (let [wb (sheet/create-workbook "html" (parse-excel-data data))]
-    (sheet/save-workbook! "d:/exponents.xlsx" wb)))
+(defn save-to-excel
+  ([data]
+   (let [wb (sheet/create-workbook "html" (parse-excel-data data))]
+     (sheet/save-workbook! "d:/exponents.xlsx" wb)))
+  ([data file]
+   (let [wb (sheet/create-workbook "html" (parse-excel-data data))]
+     (sheet/save-workbook! file wb))))
 
 (defn list-dir [path]
   (file-seq (io/file path)))
@@ -72,13 +76,14 @@
 
 (defn find-match-file [path]
   (let [phtml-list (-> (list-dir path)
-                       (->> (filter #(.endsWith (.getName %) ".phtml"))))
+                       (->> (filter #(.endsWith (.getName %) ".php"))))
         ready-list (get-ready-translate-list)]
     (->> phtml-list
          (mapcat #(re-seq #"Mage::helper\(\"Ave40_Translate\"\)->__\((['\"])([^\n\$]+?)\1\)" (slurp %)))
          #_(map #(get % 2))
          (into #{})
-         (remove #(or (nil? %) (lazy-contains? ready-list (get % 2)))))))
+         #_(remove #(or (nil? %) (lazy-contains? ready-list (get % 2)))))))
+
 
 (defn save-match-data [data]
   (let [wb (sheet/create-workbook "html" data)]
@@ -88,18 +93,23 @@
     find-match-file
     save-match-data)
 
+(-> "E:\\ave40_mg\\app\\code\\local\\Ave40"
+    find-match-file
+    save-match-data)
+
 
 
 (defn replace-all-file [dir-path]
   (let [dir-seq (file-seq (io/file dir-path))
         phtml-list (filter #(and (.isFile %)
-                                 (.endsWith (.getName %) ".phtml")) dir-seq)]
+                                 (.endsWith (.getName %) ".php")
+                                 (not (.contains (.getAbsolutePath %) "Adminhtml"))) dir-seq)]
     (doseq [item phtml-list]
       (spit (.getAbsolutePath item)
             (str/replace (slurp item) #"\$this->__" "Mage::helper(\"Ave40_Translate\")->__")))))
 
 
-#_(replace-all-file "E:\\ave40_mg\\app\\design\\frontend\\default\\se105")
+#_(replace-all-file "E:\\ave40_mg\\app\\code\\local\\Ave40")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  导入产品数据
 
@@ -202,7 +212,66 @@
             (println (str "error: " [id filename]))))))))
 
 
+(defn- read-csv [path]
+  (-> path
+      slurp
+      (str/split #"\r\n")
+      (->> (remove #(= "" %)))
+      (->> (map #(str/split (subs % 1 (- (count %) 1)) #"\",\"")))))
 
+
+(defn- load-keyword-data [path]
+  (->> path
+       (sheet/load-workbook)
+       (sheet/select-sheet "html")
+       (sheet/select-columns {:A :keyword})))
+
+(defn- all-keywords-data []
+  (let [app-path "D:\\fayu\\app.xlsx"
+        view-path "D:\\fayu\\view.xlsx"
+        app-data (load-keyword-data app-path)
+        view-data (load-keyword-data view-path)
+        need-data (map (fn [n] {:keyword (first n)}) (read-csv "D:\\fayu\\Ave40_Translate.csv"))]
+    (into #{} (concat app-data view-data need-data))))
+
+
+(defn- read-txt [path]
+  (-> path
+      slurp
+      (str/split #"\r\n")
+      (->> (remove #(= "" %)))
+      (->> (map (fn [n] (into [] (map #(str/trim %) (str/split n #":"))))))))
+
+(defn- all-translate-data []
+  (let [csv (read-csv "D:\\fayu\\trans.csv")
+        txt (read-txt "D:\\fayu\\ttt.txt")]
+    (into {} (concat csv txt))))
+
+(defn- parse-csv-str [data]
+  (reduce
+    (fn [s {:keys [keyword value]}]
+      (let [re-keyword (str/replace keyword #"\"" "\\\"")
+            re-value (str/replace value #"\"" "\\\"")]
+        (str s "\"" re-keyword "\",\"" re-value "\"\n")))
+    ""
+    data))
+
+(defn- parse-result-translate-file []
+  (let [keywords (all-keywords-data)
+        translate (all-translate-data)
+        data (for [{:keys [keyword]} keywords]
+               (if (get translate keyword)
+                 {:keyword keyword :value (get translate keyword)}
+                 {:keyword keyword :value keyword}))
+        group-data (group-by #(= (:keyword %) (:value %)) data)]
+    (-> (get group-data true)
+        parse-csv-str
+        (->> (spit "D:\\fayu\\rs-some.csv")))
+    (-> (get group-data false)
+        parse-csv-str
+        (->> (spit "D:\\fayu\\rs-diff.csv")))))
+
+(parse-result-translate-file)
 
 #_(-> (select-all ave40-db {:table "cms_block" :where "`content` NOT LIKE '{{block%'"})
     (->> (mapcat (fn [info]
