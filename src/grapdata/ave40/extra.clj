@@ -93,7 +93,7 @@
     find-match-file
     save-match-data)
 
-(-> "E:\\ave40_mg\\app\\code\\local\\Ave40"
+#_(-> "E:\\ave40_mg\\app\\code\\local\\Ave40"
     find-match-file
     save-match-data)
 
@@ -219,20 +219,33 @@
       (->> (remove #(= "" %)))
       (->> (map #(str/split (subs % 1 (- (count %) 1)) #"\",\"")))))
 
-
-(defn- load-keyword-data [path]
+(defn- read-excel [path cols]
   (->> path
        (sheet/load-workbook)
        (sheet/select-sheet "html")
-       (sheet/select-columns {:A :keyword})))
+       (sheet/select-columns cols)))
+
+(defn- load-keyword-data [path]
+  (read-excel path {:A :keyword}))
+
+(defn- load-block-keyword-data []
+  (let [data (select-all ave40-db {:table "cms_block"})]
+    (map #(last %) (mapcat
+               (fn [{:keys [content block_id]}]
+                 (re-seq #"\{\{t t=\"(.+?)\"\}\}" content))
+               data))))
+
+#_(load-block-keyword-data )
+
 
 (defn- all-keywords-data []
   (let [app-path "D:\\fayu\\app.xlsx"
         view-path "D:\\fayu\\view.xlsx"
         app-data (load-keyword-data app-path)
         view-data (load-keyword-data view-path)
-        need-data (map (fn [n] {:keyword (first n)}) (read-csv "D:\\fayu\\Ave40_Translate.csv"))]
-    (into #{} (concat app-data view-data need-data))))
+        need-data (map (fn [n] {:keyword (first n)}) (read-csv "D:\\fayu\\Ave40_Translate.csv"))
+        block-data (map (fn [n] {:keyword n}) (load-block-keyword-data))]
+    (into #{} (concat app-data view-data need-data block-data))))
 
 
 (defn- read-txt [path]
@@ -242,10 +255,17 @@
       (->> (remove #(= "" %)))
       (->> (map (fn [n] (into [] (map #(str/trim %) (str/split n #":"))))))))
 
+(defn- read-trans-excel [path]
+  (-> (read-excel path {:A :keyword, :B :value})
+      (->> (map (fn [{:keys [keyword value]}] [keyword value])))))
+
+
 (defn- all-translate-data []
   (let [csv (read-csv "D:\\fayu\\trans.csv")
-        txt (read-txt "D:\\fayu\\ttt.txt")]
-    (into {} (concat csv txt))))
+        txt (read-txt "D:\\fayu\\ttt.txt")
+        excel (read-trans-excel "D:\\fayu\\trans.xlsx")]
+    (into {} (concat csv txt excel))))
+
 
 (defn- parse-csv-str [data]
   (reduce
@@ -271,9 +291,52 @@
         parse-csv-str
         (->> (spit "D:\\fayu\\rs-diff.csv")))))
 
-(parse-result-translate-file)
+#_(parse-result-translate-file)
 
-#_(-> (select-all ave40-db {:table "cms_block" :where "`content` NOT LIKE '{{block%'"})
+
+(defn find-text-in-htmlnodes [nodes]
+  (reduce
+    (fn [coll node]
+      (let [content (:content node)]
+        (into #{}
+              (if (some #(and (string? %) (not= "" (str/trim %))) content)
+                (conj coll (-> content (enlive/emit*) (str/join)))
+                (concat coll (find-text-in-htmlnodes content)))))) [] nodes))
+
+
+(defn change-to-nodes [content]
+  (-> content
+      (str/replace #"\r\n" "")
+      (StringReader.)
+      (enlive/html-resource)))
+
+(defn- find-tmp-text []
+  (-> (slurp "D:\\fayu\\in-tmp.tmp")
+      (change-to-nodes)
+      (find-text-in-htmlnodes)))
+
+(defn- replace-tmp-text [keywords]
+  (let [content (slurp "D:\\fayu\\in-tmp.tmp")]
+    (spit "D:\\fayu\\out-tmp.tmp"
+          (reduce #(str/replace %1 %2 (str "{{t t=\"" %2 "\"}}")) content keywords))))
+
+(find-tmp-text)
+
+(replace-tmp-text [" <br /> <strong>How to Join our Wholesale Program</strong><br /> <br /> Send us an email of inquiry to <a href=\"mailto:info@ave40.com\">info@ave40.com</a>. One of our stuffers will contact you for placing a wholesale order offline.<br /> You can also set up a wholesale account and navigate through the whole online ordering system. Click our Wholesale Guide <a href=\"https://www.ave40.com/wholesale/wholesale-guide.html\">https://www.ave40.com/wholesale/wholesale-guide.html</a> to know how.<br /> If you have any questions concerning all these, please drop us an email to <a href=\"mailto:support@ave40.com\">support@ave40.com</a>. Our staffers will resolve them for you in time.<br /> <br />  <br /> Last but not least, occasionally we have rounds of sales promotion for consumers and wholesale partners, so stay posted!<br /> <br />  <br /> <span class=\"inquireNow-popup-btn inquireNow\">Wholesale Inquiry</span>"
+                   "Demo samples upon launching of new products on a case-to-case basis;"
+                   "Reliable DHL/UPS/FedEx courier service."
+                   "<br /> <br /> <br /> Thank you and welcome to join our Wholesale Program!<br />  <br /> Years of industrial presence and sound distributorships have allowed us to pass the additional value of our goods and services on to our wholesale partners, here defined as retailers, vapor shops, wholesalers, and industrial, commercial, and professional business owners.<br /> <br /> <strong>What We Provide</strong>"
+                   "Various discounts throughout our product lines for your bulk and/or wholesale orders;"
+                   "Customized quotations for your orders depending on the order size, frequency, and lifetime value of the partnership;"
+                   "Same day or next day delivery for stocked products;"])
+
+
+
+
+(-> (slurp "D:\\fayu\\in-tmp.tmp")
+    change-to-nodes)
+
+#_(-> (select-all ave40-db {:table "cms_page" :where "page_id not in (1,2,3)"})
     (->> (mapcat (fn [info]
                    (-> info
                        :content
@@ -286,7 +349,7 @@
                        (->> (map (fn [s] (str/trim s))))
                        (->> (remove #(= "" %)))
                        (->> (map (fn [x] {:words x :block_id (:block_id info)})))))))
-    (save-to-excel))
+    #_(save-to-excel))
 
 
 #_(let [data (->> (sheet/load-workbook "f:\\blocks.xlsx")
