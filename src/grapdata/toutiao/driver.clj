@@ -7,7 +7,7 @@
            (org.openqa.selenium Proxy)))
 
 (defn create-chrome-proxy-driver []
-  (System/setProperty "webdriver.chrome.driver" (.getPath (io/resource "driver/chromedriver.exe")))
+  (System/setProperty "webdriver.chrome.driver" (.getPath (io/resource "driver/chromedriver")))
   (init-driver {:webdriver
                 (ChromeDriver.
                   (doto (DesiredCapabilities/chrome)
@@ -15,7 +15,7 @@
                                               (.setHttpProxy "http://183.135.249.198:35150")))))}))
 
 (defn create-chrome-driver []
-  (System/setProperty "webdriver.chrome.driver" (.getPath (io/resource "driver/chromedriver.exe")))
+  (System/setProperty "webdriver.chrome.driver" (.getPath (io/resource "driver/chromedriver")))
   (let [driver (new-driver {:browser :chrome})]
     (window-resize driver {:width 1920 :height 1080})
     driver))

@@ -320,9 +320,9 @@
     (spit "D:\\fayu\\out-tmp.tmp"
           (reduce #(str/replace %1 %2 (str "{{t t=\"" %2 "\"}}")) content keywords))))
 
-(find-tmp-text)
+#_(find-tmp-text)
 
-(replace-tmp-text [" <br /> <strong>How to Join our Wholesale Program</strong><br /> <br /> Send us an email of inquiry to <a href=\"mailto:info@ave40.com\">info@ave40.com</a>. One of our stuffers will contact you for placing a wholesale order offline.<br /> You can also set up a wholesale account and navigate through the whole online ordering system. Click our Wholesale Guide <a href=\"https://www.ave40.com/wholesale/wholesale-guide.html\">https://www.ave40.com/wholesale/wholesale-guide.html</a> to know how.<br /> If you have any questions concerning all these, please drop us an email to <a href=\"mailto:support@ave40.com\">support@ave40.com</a>. Our staffers will resolve them for you in time.<br /> <br />  <br /> Last but not least, occasionally we have rounds of sales promotion for consumers and wholesale partners, so stay posted!<br /> <br />  <br /> <span class=\"inquireNow-popup-btn inquireNow\">Wholesale Inquiry</span>"
+#_(replace-tmp-text [" <br /> <strong>How to Join our Wholesale Program</strong><br /> <br /> Send us an email of inquiry to <a href=\"mailto:info@ave40.com\">info@ave40.com</a>. One of our stuffers will contact you for placing a wholesale order offline.<br /> You can also set up a wholesale account and navigate through the whole online ordering system. Click our Wholesale Guide <a href=\"https://www.ave40.com/wholesale/wholesale-guide.html\">https://www.ave40.com/wholesale/wholesale-guide.html</a> to know how.<br /> If you have any questions concerning all these, please drop us an email to <a href=\"mailto:support@ave40.com\">support@ave40.com</a>. Our staffers will resolve them for you in time.<br /> <br />  <br /> Last but not least, occasionally we have rounds of sales promotion for consumers and wholesale partners, so stay posted!<br /> <br />  <br /> <span class=\"inquireNow-popup-btn inquireNow\">Wholesale Inquiry</span>"
                    "Demo samples upon launching of new products on a case-to-case basis;"
                    "Reliable DHL/UPS/FedEx courier service."
                    "<br /> <br /> <br /> Thank you and welcome to join our Wholesale Program!<br />  <br /> Years of industrial presence and sound distributorships have allowed us to pass the additional value of our goods and services on to our wholesale partners, here defined as retailers, vapor shops, wholesalers, and industrial, commercial, and professional business owners.<br /> <br /> <strong>What We Provide</strong>"
@@ -333,7 +333,7 @@
 
 
 
-(-> (slurp "D:\\fayu\\in-tmp.tmp")
+#_(-> (slurp "D:\\fayu\\in-tmp.tmp")
     change-to-nodes)
 
 #_(-> (select-all ave40-db {:table "cms_page" :where "page_id not in (1,2,3)"})
