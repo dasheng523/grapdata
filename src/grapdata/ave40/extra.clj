@@ -9,7 +9,8 @@
             [grapdata.ave40.utils :refer :all]
             [grapdata.ave40.article :as article]
             [grapdata.ave40.grap-article :as grap]
-            [clojure.java.io :as io]]
+            [clojure.java.io :as io]
+            [clojure.walk :as w]]
   (:import (java.io StringReader)))
 
 (defn- parse-excel-data [list]
@@ -170,6 +171,14 @@
    :password "a5235013"
    :sslmode "require"})
 
+(def ave40-db-true
+  {:classname "com.mysql.jdbc.Driver"
+   :subprotocol "mysql"
+   :subname "//127.0.0.1/ave40_mg"
+   :user "root"
+   :password "a5235013"
+   :sslmode "require"})
+
 (defn- find-product-id [s]
   (let [sku (-> (str/replace s #"_" "-")
                 (str/split #"-")
@@ -319,6 +328,24 @@
   (let [content (slurp "D:\\fayu\\in-tmp.tmp")]
     (spit "D:\\fayu\\out-tmp.tmp"
           (reduce #(str/replace %1 %2 (str "{{t t=\"" %2 "\"}}")) content keywords))))
+
+
+(defn create-page-data [name]
+  (let [info (select-one ave40-db-true
+                         {:table "cms_page" :where (str "is_active=1" " and " "title='" name "'")})
+        page-id (:page_id info)
+        in-info (w/stringify-keys (dissoc info :page_id))]
+    (update-data ave40-db-true {:table "cms_page_store"
+                             :where (str "page_id=" page-id)
+                             :updates {:store_id 1}})
+    (let [new-page-id (-> (insert-table-data
+                            ave40-db-true
+                            {:table "cms_page" :cols (keys in-info) :vals (vals in-info)})
+                          :generated_key)]
+      (insert-table-data ave40-db-true
+                         {:table "cms_page_store" :cols ["page_id" "store_id"] :vals [new-page-id 4]}))))
+
+#_(create-page-data " Wholesale")
 
 #_(find-tmp-text)
 

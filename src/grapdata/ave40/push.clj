@@ -87,5 +87,5 @@
   (doseq [{:keys [domain tag amount]} domains]
     (patch-push-article domain amount tag)))
 
-#_(do-push)
+(do-push)
 #_(patch-push-article "www.ecigview.com" 5 "vape")

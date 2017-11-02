@@ -18,6 +18,11 @@
       :body
       (change-string-to-nodes)))
 
+(defn- read-file-enlive [path]
+  (-> path
+      slurp
+      (change-string-to-nodes)))
+
 (defn create-default-text-selector [node-select]
   (fn [nodes]
     (str/join
@@ -32,42 +37,28 @@
       (if-not (empty? find-rs)
         (-> find-rs first :attrs :href)))))
 
-(defn get-file-content [path]
-  (-> path
-      slurp))
 
 (defn parse-info [node]
-  {:link (-> node
-           (enlive/select [:figure [:a (enlive/nth-child 3)]])
-           (enlive/texts)
-           first)
-   :name (-> node
-             (enlive/select [:figure [:a (enlive/nth-child 1)]])
-             (enlive/texts)
-             first
-             (str/trim))
-   :desc (-> node
-             (enlive/select [:figure :figcaption])
-             (first)
-             (enlive/text)
-             (str/trim))})
+  (let [link-selector (create-default-text-selector [:figure [:a (enlive/nth-child 3)]])
+        name-selector (create-default-text-selector [:figure [:a (enlive/nth-child 1)]])
+        desc-selector (create-default-text-selector [:figure :figcaption])]
+    {:link (link-selector node)
+     :name (name-selector node)
+     :desc (desc-selector node)}))
 
-(let [node-tree (-> "/Users/huangyesheng/Documents/11.html"
-                    (get-file-content)
-                    (change-string-to-nodes))
+(let [node-tree (read-file-enlive "f:\\111.html")
       title-selector (create-default-text-selector [:div.tit :h1])
+      toutiao-selector (create-default-href-selector [[:div.container (enlive/nth-child 1)] :span :a])
       title (-> node-tree title-selector)
-      atlas-url (-> node-tree ((create-default-href-selector [[:div.container (enlive/nth-child 1)] :span :a])))
+      atlas-url (-> node-tree toutiao-selector)
       figure-list (-> node-tree
                       (enlive/select [:figure])
                       (->> (map parse-info)))]
-  figure-list)
+  (count figure-list))
 
 
-(defn fetch-atlas-pic [url]
-  (-> url
-      (http/get)
-      :body
+(defn fetch-atlas-pic [content]
+  (-> content
       (->> (re-find #"sub_images\":([\s\S]+?),\"max_img_width"))
       second
       (json/parse-string true)
@@ -75,16 +66,13 @@
 
 (count (fetch-atlas-pic "https://www.toutiao.com/a6482162230036005389/#p=1"))
 
-(defn- download-file [url]
-  (let [filename (str (quot (System/currentTimeMillis) 1000) (rand 10000) ".png")
-        pic (slurp url)]
-    (spit (str "/Users/huangyesheng/Documents/" filename) pic)))
-
-(download-file "http://pb3.pstatp.com/origin/42c00002497dde7a96db")
-
-(defn copy [uri file]
+(defn download-file [uri file]
   (with-open [in (io/input-stream uri)
               out (io/output-stream file)]
     (io/copy in out)))
 
-(copy "http://pb3.pstatp.com/origin/42c00002497dde7a96db" "/Users/huangyesheng/Documents/ddd.png")
+(defn- create-filename
+  []
+  (quot (System/currentTimeMillis) 1000))
+
+(download-file "http://pb3.pstatp.com/origin/42c00002497dde7a96db" "/Users/huangyesheng/Documents/ddd.png")
