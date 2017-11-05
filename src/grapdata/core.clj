@@ -2,13 +2,14 @@
   (:require [grapdata.ave40.spinner :as sp]
             [grapdata.ave40.push :as push]
             [grapdata.ave40.grap-article :as grap]
-            [grapdata.ave40.extra :as extra])
+            [grapdata.ave40.extra :as extra]
+            [grapdata.toutiao.logic :as logic])
   (:gen-class))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (sp/simple-run-spinner-task))
+  (logic/run))
 
 #_(let [inp (read-line)]
   (case inp

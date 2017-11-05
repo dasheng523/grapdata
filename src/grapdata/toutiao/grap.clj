@@ -6,7 +6,9 @@
             [clojure.java.io :as io]
             [clojure.tools.logging :as log]
             [clj-time.core :as t]
-            [clj-time.format :as tf])
+            [clj-time.format :as tf]
+            [clojure.tools.logging :as log]
+            [grapdata.toutiao.config :as config])
   (:import (java.io StringReader)))
 
 (defn- change-string-to-nodes [s]
@@ -72,16 +74,21 @@
     path))
 
 (defn- download-toutiao-piture [url]
-  (let [filename (str (time-base-dir "/Users/huangyesheng/Documents/pics") (generate-filename ".png"))]
+  (let [filename (str (time-base-dir config/download-base-path) (generate-filename ".png"))]
     (io/make-parents filename)
-    (download-file url filename)
-    filename))
+    (println (str "downloading image: " url))
+    (try
+      (download-file url filename)
+      filename
+      (catch Exception e
+        (log/error e)))))
 
 
 
 (defn change-pic-md5 [pic-path]
   (with-open [w (io/writer pic-path :append true)]
-    (.write w "sdfsdfsf")))
+    (.write w (rand-int 100000)))
+  pic-path)
 
 
 (defn product-item-info [url]
@@ -94,7 +101,8 @@
                         (enlive/select [:figure])
                         (->> (map parse-info)))
         pic-list (-> (fetch-atlas-pic (:body (http/get atlas-url)))
-                     (->> (map #(download-toutiao-piture (str "http:" %)))))
+                     (->> (map #(download-toutiao-piture (str "http:" %))))
+                     (->> (map change-pic-md5)))
         goods-list (map #(conj %1 {:pic %2}) figure-list pic-list)]
     {:atitle title :goods goods-list}))
 
