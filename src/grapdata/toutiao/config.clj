@@ -1,7 +1,10 @@
 (ns grapdata.toutiao.config)
 
-#_(def download-base-path "/Users/huangyesheng/Documents/pics")
-#_(def url-data "/Users/huangyesheng/Documents/pics/test.txt")
+(def platform "mac")
+(def download-base-path "/Users/huangyesheng/Documents/pics")
+(def url-data "/Users/huangyesheng/Documents/pics/test.txt")
+(def cookies-base-path "/Users/huangyesheng/Documents/cookies/")
 
-(def download-base-path "e:\\pics")
-(def url-data "e:\\test.txt")
+#_(def platform "win")
+#_(def download-base-path "e:\\pics")
+#_(def url-data "e:\\test.txt")

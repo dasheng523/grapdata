@@ -6,6 +6,7 @@
             [grapdata.toutiao.grap :as grap]
             [grapdata.utils :as utils]
             [clojure.string :as str]
+            [clojure.java.io :as io]
             [grapdata.toutiao.config :as config])
   (:import (java.text SimpleDateFormat)))
 
@@ -17,21 +18,56 @@
        (sheet/select-sheet "html")
        (sheet/select-columns cols)))
 
-(defn recover-cookies [driver]
-  (let [my-cookies (-> (slurp "d:/cookies.json") (json/parse-string true))]
-    (doseq [my my-cookies]
-      (add-cookie
-        driver
-        (if (:expiry my)
-          (update my :expiry #(.parse (SimpleDateFormat. "yyyy-MM-dd'T'hh:mm:ss'Z'") %))
-          my)))))
+
+(defn recover-cookies [driver user]
+  (let [mycookies (utils/deserialize (str config/cookies-base-path user))]
+    (doseq [co mycookies]
+      (add-cookie driver co))))
+
+(defn save-cookies [driver user]
+  (io/make-parents (str config/cookies-base-path user))
+  (utils/serialize
+   (str config/cookies-base-path user)
+   (map #(dissoc % :cookie) (cookies driver))))
+
+(defn do-save-cookies [fn-get-user]
+  (let [driver (tdriver/create-chrome-driver)]
+    (to driver "https://mp.toutiao.com/profile_v2/")
+    (save-cookies driver (fn-get-user))
+    (close driver)))
+
+(defn do-recover-cookies [driver user]
+  (to driver "https://mp.toutiao.com/profile_v2/")
+  (recover-cookies driver user))
 
 
-(defn save-cookies [driver]
-  (-> (cookies driver)
-      (->> (map #(dissoc % :cookie)))
-      (json/generate-string)
-      (->> (spit "d:/cookies.json"))))
+(defn handle-reset-page [driver]
+  (when (and
+         (exists? driver "span.action-text")
+         (str/includes? (html driver "span.action-text") "撤销"))
+    (click driver "span.action-text")))
+
+
+(defn enter-post-page [driver]
+  (click driver "div.shead_right div.shead-post")
+  (Thread/sleep sleep-time)
+  (when (exists? driver "div.dialog-footer .tui-btn-negative")
+    (click driver "div.dialog-footer .tui-btn-negative")
+    (Thread/sleep (* 2 sleep-time))
+    (click driver "div.shead_right div.shead-post"))
+  (Thread/sleep (* 2 sleep-time))
+  (click driver "ul.pgc-title li:nth-child(3) a")
+  (Thread/sleep sleep-time)
+  (handle-reset-page driver)
+  (wait-until driver #(exists? % "div.content-wrapper div.upload-bg") (* 3600 1000) 1000))
+
+
+
+(defn open-toutiao [driver user]
+  (to driver "https://mp.toutiao.com/profile_v2/")
+  (wait-until driver #(= (title %) "主页 - 头条号") (* 3600 1000) 1000)
+  (when (exists? driver "div.btn-wrap span.got-it")
+    (click driver "div.btn-wrap span.got-it")))
 
 
 (defn- handle-no-money [driver]
@@ -92,33 +128,6 @@
   (click driver "div.pgc-radio label.tui-radio-wrapper:nth-child(2) span.tui-radio-text")
   #_(click driver "div.figure-footer div.pgc-btn div.tui-btn"))
 
-(defn handle-reset-page [driver]
-  (when (and
-         (exists? driver "span.action-text")
-         (str/includes? (html driver "span.action-text") "撤销"))
-    (click driver "span.action-text")))
-
-(defn enter-post-page [driver]
-  (click driver "div.shead_right div.shead-post")
-  (Thread/sleep sleep-time)
-  (when (exists? driver "div.dialog-footer .tui-btn-negative")
-    (click driver "div.dialog-footer .tui-btn-negative")
-    (Thread/sleep (* 2 sleep-time))
-    (click driver "div.shead_right div.shead-post"))
-  (Thread/sleep (* 2 sleep-time))
-  (click driver "ul.pgc-title li:nth-child(3) a")
-  (Thread/sleep sleep-time)
-  (handle-reset-page driver)
-  (wait-until driver #(exists? % "div.content-wrapper div.upload-bg") (* 3600 1000) 1000))
-
-
-(defn auto-do [driver]
-  (to driver "https://mp.toutiao.com/profile_v2/")
-  (wait-until driver #(= (title %) "主页 - 头条号") (* 3600 1000) 1000)
-  (when (exists? driver "div.btn-wrap span.got-it")
-    (click driver "div.btn-wrap span.got-it"))
-  (enter-post-page driver))
-
 (defn- read-data-from-txt [path]
   (-> path
       slurp
@@ -135,11 +144,13 @@
               1000))
 
 
-(defn run[]
+(defn run [user]
   (def mydriver (tdriver/create-chrome-driver))
   (let [links (read-data-from-txt config/url-data)
         flist (for [link links] (future (grap/product-item-info link)))]
-    (auto-do mydriver)
+    (do-recover-cookies mydriver user)
+    (open-toutiao mydriver user)
+    (enter-post-page mydriver)
     (dotimes [n (count links)]
       (let [link (nth links n)
             fut (nth flist n)]
