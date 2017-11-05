@@ -1,8 +1,8 @@
 (ns grapdata.core
-  (:require [grapdata.ave40.spinner :as sp]
-            [grapdata.ave40.push :as push]
-            [grapdata.ave40.grap-article :as grap]
-            [grapdata.ave40.extra :as extra]
+  (:require #_[grapdata.ave40.spinner :as sp]
+            #_[grapdata.ave40.push :as push]
+            #_[grapdata.ave40.grap-article :as grap]
+            #_[grapdata.ave40.extra :as extra]
             [grapdata.toutiao.logic :as logic])
   (:gen-class))
 

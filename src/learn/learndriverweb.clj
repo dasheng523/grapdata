@@ -33,10 +33,3 @@
 
   )
 
-(println "1111")
-
-;(def driver (new-driver {:browser :chrome}))
-;(set-driver! driver)
-
-;(to "https://console.upyun.com/#/login")
-;(to driver "https://console.upyun.com/#/login")

@@ -123,7 +123,9 @@
   (-> path
       slurp
       (str/split #"\n")
-      (->> (map str/trim))))
+      (->> (map str/trim))
+      (->> (remove #(= "" %)))))
+
 
 (defn- wail-for-ready-post [driver]
   (wait-until driver #(and
@@ -133,9 +135,8 @@
               1000))
 
 
-(def mydriver (tdriver/create-chrome-driver))
-
 (defn run[]
+  (def mydriver (tdriver/create-chrome-driver))
   (let [links (read-data-from-txt config/url-data)
         flist (for [link links] (future (grap/product-item-info link)))]
     (auto-do mydriver)

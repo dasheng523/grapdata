@@ -8,7 +8,7 @@
     (doseq [info list]
       (data-insert! "source_article" {"url" (:url info) "html" (:html info)}))))
 
-(let [list (select-all article-db {:table "article2" :cols ["title" "spinner_title" "spinner_article"]})]
+#_(let [list (select-all article-db {:table "article2" :cols ["title" "spinner_title" "spinner_article"]})]
   (doseq [info list]
     (update-data article-db {:table "articles"
                              :updates {:spinner_title (:spinner_title info)
