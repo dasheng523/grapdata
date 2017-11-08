@@ -52,10 +52,16 @@
 
 (defn fetch-atlas-pic [content]
   (-> content
-      (->> (re-find #"sub_images\":([\s\S]+?),\"max_img_width"))
+      (->> (re-find #"sub_images\\\":([\s\S]+?),\\\"max_img_width"))
       second
+      (str/replace #"\\" "")
       (json/parse-string true)
       (->> (map :url))))
+
+#_(-> "https://www.toutiao.com/a6484909599508922894/#p=1"
+    (http/get)
+    :body
+    (fetch-atlas-pic))
 
 
 (defn download-file [uri file]
@@ -101,9 +107,9 @@
                         (enlive/select [:figure])
                         (->> (map parse-info)))
         pic-list (-> (fetch-atlas-pic (:body (http/get atlas-url)))
-                     (->> (map #(download-toutiao-piture (str "http:" %))))
+                     (->> (map #(download-toutiao-piture %)))
                      (->> (map change-pic-md5)))
         goods-list (map #(conj %1 {:pic %2}) figure-list pic-list)]
-    {:atitle title :goods goods-list}))
+    {:atitle title :goods goods-list :pp pic-list}))
 
-#_(product-item-info "http://www.51taojinge.com/jinri/temai_content_article.php?id=4066141")
+#_(product-item-info "http://www.51taojinge.com/jinri/temai_content_article.php?id=723331&check_id=2")
