@@ -4,7 +4,11 @@
             [net.cgrand.enlive-html :as enlive]
             [cheshire.core :as json]
             [clojure.java.io :as io]
-            [clojure.tools.logging :as log])
+            [clojure.tools.logging :as log]
+            [clj-time.core :as t]
+            [clj-time.format :as tf]
+            [clojure.tools.logging :as log]
+            [grapdata.toutiao.config :as config])
   (:import (java.io StringReader)))
 
 (defn- change-string-to-nodes [s]
@@ -42,37 +46,70 @@
   (let [link-selector (create-default-text-selector [:figure [:a (enlive/nth-child 3)]])
         name-selector (create-default-text-selector [:figure [:a (enlive/nth-child 1)]])
         desc-selector (create-default-text-selector [:figure :figcaption])]
-    {:link (link-selector node)
-     :name (name-selector node)
-     :desc (desc-selector node)}))
-
-(let [node-tree (read-file-enlive "f:\\111.html")
-      title-selector (create-default-text-selector [:div.tit :h1])
-      toutiao-selector (create-default-href-selector [[:div.container (enlive/nth-child 1)] :span :a])
-      title (-> node-tree title-selector)
-      atlas-url (-> node-tree toutiao-selector)
-      figure-list (-> node-tree
-                      (enlive/select [:figure])
-                      (->> (map parse-info)))]
-  (count figure-list))
-
+    {:link (str/trim (link-selector node))
+     :title (str/trim (name-selector node))
+     :desc (str/trim (desc-selector node))}))
 
 (defn fetch-atlas-pic [content]
   (-> content
-      (->> (re-find #"sub_images\":([\s\S]+?),\"max_img_width"))
+      (->> (re-find #"sub_images\\\":([\s\S]+?),\\\"max_img_width"))
       second
+      (str/replace #"\\" "")
       (json/parse-string true)
       (->> (map :url))))
 
-(count (fetch-atlas-pic "https://www.toutiao.com/a6482162230036005389/#p=1"))
+#_(-> "https://www.toutiao.com/a6484909599508922894/#p=1"
+    (http/get)
+    :body
+    (fetch-atlas-pic))
+
 
 (defn download-file [uri file]
   (with-open [in (io/input-stream uri)
               out (io/output-stream file)]
     (io/copy in out)))
 
-(defn- create-filename
-  []
-  (quot (System/currentTimeMillis) 1000))
+(defn- generate-filename
+  [suffix]
+  (str (quot (System/currentTimeMillis) 1000) (rand-int 1000) suffix))
 
-(download-file "http://pb3.pstatp.com/origin/42c00002497dde7a96db" "/Users/huangyesheng/Documents/ddd.png")
+(defn- time-base-dir [base]
+  (let [cformat (tf/formatter "yyyyMMdd")
+        timestr (tf/unparse cformat (t/now))
+        path (str base "/" timestr "/")]
+    path))
+
+(defn- download-toutiao-piture [url]
+  (let [filename (str (time-base-dir config/download-base-path) (generate-filename ".png"))]
+    (io/make-parents filename)
+    (println (str "downloading image: " url))
+    (try
+      (download-file url filename)
+      filename
+      (catch Exception e
+        (log/error e)))))
+
+
+
+(defn change-pic-md5 [pic-path]
+  (with-open [w (io/writer pic-path :append true)]
+    (.write w (rand-int 100000)))
+  pic-path)
+
+
+(defn product-item-info [url]
+  (let [node-tree (fetch-to-enlive url)
+        title-selector (create-default-text-selector [:div.tit :h1])
+        toutiao-selector (create-default-href-selector [[:div.container (enlive/nth-child 1)] :span :a])
+        title (-> node-tree title-selector)
+        atlas-url (-> node-tree toutiao-selector)
+        figure-list (-> node-tree
+                        (enlive/select [:figure])
+                        (->> (map parse-info)))
+        pic-list (-> (fetch-atlas-pic (:body (http/get atlas-url)))
+                     (->> (map #(download-toutiao-piture %)))
+                     (->> (map change-pic-md5)))
+        goods-list (map #(conj %1 {:pic %2}) figure-list pic-list)]
+    {:atitle title :goods goods-list :pp pic-list}))
+
+#_(product-item-info "http://www.51taojinge.com/jinri/temai_content_article.php?id=723331&check_id=2")

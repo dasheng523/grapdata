@@ -31,7 +31,7 @@
                  [cheshire "5.8.0"]]
   :main ^:skip-aot grapdata.core
   :target-path "target/%s"
-  :jvm-opts ["-Xmx2G"]
+  :jvm-opts ["-Xmx1G"]
   :profiles {:uberjar {:aot :all}})
 
 
