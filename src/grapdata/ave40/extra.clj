@@ -169,6 +169,7 @@
    :subname "//127.0.0.1/ttttt"
    :user "root"
    :password "a5235013"
+   :characterEncoding "UTF-8"
    :sslmode "require"})
 
 (def ave40-db-true
@@ -177,6 +178,7 @@
    :subname "//127.0.0.1/ave40_mg"
    :user "root"
    :password "a5235013"
+   :characterEncoding "UTF-8"
    :sslmode "require"})
 
 (defn- find-product-id [s]
@@ -335,9 +337,10 @@
                          {:table "cms_page" :where (str "is_active=1" " and " "title='" name "'")})
         page-id (:page_id info)
         in-info (w/stringify-keys (dissoc info :page_id))]
-    (update-data ave40-db-true {:table "cms_page_store"
-                             :where (str "page_id=" page-id)
-                             :updates {:store_id 1}})
+    (insert-table-data ave40-db-true
+                       {:table "cms_page_store"
+                        :cols ["page_id" "store_id"]
+                        :vals [page-id 1]})
     (let [new-page-id (-> (insert-table-data
                             ave40-db-true
                             {:table "cms_page" :cols (keys in-info) :vals (vals in-info)})
@@ -345,7 +348,76 @@
       (insert-table-data ave40-db-true
                          {:table "cms_page_store" :cols ["page_id" "store_id"] :vals [new-page-id 4]}))))
 
-#_(create-page-data " Wholesale")
+
+
+(defn ddd []
+  (create-page-data "More About AVE40 | Buy Electronic Cigarette Online, Buy Original E-Cigs at AVE40")
+  (create-page-data "Free Membership Agreement")
+  (create-page-data "Affiliate Program")
+  (create-page-data "BBS Marketing Program")
+  (create-page-data "cart")
+  (create-page-data "Clearance Sale For E-Cigarette")
+  (create-page-data "Company")
+  (create-page-data "Contact Us")
+  (create-page-data "Customer Service")
+  (create-page-data "details")
+  (create-page-data "drop-shipping")
+  (create-page-data "Enable Cookies")
+  (create-page-data "Get your free website now!")
+  (create-page-data "Privacy Policy")
+  (create-page-data "Welcome to our Exclusive Online Store")
+  (create-page-data "Reward Points")
+  (create-page-data "Rewards")
+  (create-page-data "503 Service Unavailable")
+  (create-page-data "Share for Discounts")
+  (create-page-data "Shipping & Tracking")
+  (create-page-data "Terms & Conditions")
+  (create-page-data "vaporesso-sale")
+  (create-page-data "Warranty & Returns")
+  (create-page-data " Wholesale"))
+
+#_(ddd)
+
+(defn create-block-data [identifier]
+  (let [info (select-one ave40-db-true
+                         {:table "cms_block" :where (str "is_active=1" " and " "identifier='" identifier "'")})
+        block_id (:block_id info)
+        in-info (w/stringify-keys (dissoc info :block_id))]
+    (insert-table-data ave40-db-true
+                       {:table "cms_block_store"
+                        :cols ["block_id" "store_id"]
+                        :vals [block_id 1]})
+    (let [new-block-id (-> (insert-table-data
+                             ave40-db-true
+                            {:table "cms_block" :cols (keys in-info) :vals (vals in-info)})
+                          :generated_key)]
+      (insert-table-data ave40-db-true
+                         {:table "cms_block_store" :cols ["block_id" "store_id"] :vals [new-block-id 4]}))))
+
+(defn do-create-block []
+  (create-block-data "home-bottom-fix")
+  (create-block-data "home-four-service")
+  (create-block-data "new-navigation")
+  (create-block-data "new-navigation-front")
+  (create-block-data "footer-customer-services")
+  (create-block-data "newhome-bast-seller")
+  (create-block-data "newhome-newarrival")
+  (create-block-data "newhome-about-us-content")
+  (create-block-data "product_logis")
+  (create-block-data "product_aftersale")
+  (create-block-data "product_shipping_and_payment")
+  (create-block-data "home-search-quick")
+  (create-block-data "home-blog-article")
+  (create-block-data "home-product-list-1a")
+  (create-block-data "home-product-list-2b")
+  (create-block-data "home-product-list-3c")
+  (create-block-data "home-product-list-4d")
+  (create-block-data "home-product-list-5f")
+  (create-block-data "product_safe"))
+
+
+
+#_(do-create-block)
 
 #_(find-tmp-text)
 
